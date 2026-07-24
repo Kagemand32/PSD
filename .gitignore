@@ -101,3 +101,10 @@ plcFSharp/MicroC/machine.exe
 plcFSharp/MicroC/machine
 plcFSharp/MicroC/CEx/*.out
 plcFSharp/MicroC/out
+
+plcFSharp/Virtual/CircularQueue/*.class
+plcFSharp/Virtual/Ex6/*.class
+plcFSharp/Virtual/Ex13/*.class
+plcFSharp/Virtual/Ex26/*.class
+plcFSharp/Virtual/Selsort/*.class
+plcFSharp/Virtual/StringConcatSpeed/*.class
