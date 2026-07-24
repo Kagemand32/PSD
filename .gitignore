@@ -32,6 +32,12 @@ plcFSharp/Intcomp/*.class
 plcFSharp/Intcomp/*.pdf
 plcFSharp/Usql/UsqlLex.fsi
 plcFSharp/Usql/UsqlPar.fsi
+plcFSharp/Usql/UsqlLex.fs
+plcFSharp/Usql/UsqlPar.fs
+plcFSharp/Expr/ExprLex.fsi
+plcFSharp/Expr/ExprPar.fsi
+plcFSharp/Expr/ExprLex.fs
+plcFSharp/Expr/ExprPar.fs
 
 # Do not include Java SE 25 auto generated folder.
 plcFSharp/MicroJ/JavaEx/Javac
