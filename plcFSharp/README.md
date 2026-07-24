@@ -28,7 +28,7 @@ each chapter.
 |--------:|:-----:|:-------------|
 | 1 | Introduction | [Intro](Intro/README.md) |
 | 2 | Interpreters and Compilers | [Intcomp](Intcomp/README.md) |
-| 3 | From Concrete Syntax to Abstract Syntax | [Usql](Usql/README.md), [Expr](Expr/README.md) |
+| 3 | From Concrete Syntax to Abstract Syntax | [Usql](Usql/README.md), [SExpr](SExpr/README.md), [Expr](Expr/README.md) |
 | 4 | A First-Order Functional Language | [Fun](Fun/README.md), [TypedFun](TypedFun/README.md) |
 | 5 | Higher-Order Functions | [Fun](Fun/README.md) |
 | 6 | Polymorphic Types | [Fun](Fun/README.md) |
