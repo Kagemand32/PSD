@@ -1,0 +1,78 @@
+########
+## Build
+########
+
+*.dll
+*.exe
+*.class
+*.zip
+*.ilg
+*.ind
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.out
+*~
+.vs
+.DS_Store
+
+# Do not include LaTeX generated files.
+plc3rd/*.pdf
+plc3rd/*.aux
+plc3rd/*.idx
+plc3rd/*.log
+plc3rd/*.toc
+
+# Do not include xfig generated files.
+plc3rd/figs/*.bak
+plc3rd/figs/*-eps-converted-to.pdf
+
+# Do not include Java SE 25 auto generated folder.
+plcFSharp/MicroJ/JavaEx/Javac
+
+# Do not include C++ build target
+plcFSharp/MicroJ/Cpp/main
+
+# Do not include micro VM build targets.
+plcFSharp/MicroVM/microvm
+plcFSharp/MicroVM/microvm.exe
+
+# Do not include dotnet generated files.
+bin/
+obj/
+
+# Do not include Arm64 generated files
+plcFSharp/Arm64/CLex.fs
+plcFSharp/Arm64/CLex.fsi
+plcFSharp/Arm64/CPar.fs
+plcFSharp/Arm64/CPar.fsi
+plcFSharp/Arm64/driver.o
+plcFSharp/Arm64/try*
+plcFSharp/Arm64/Arm64Ex/*.s
+plcFSharp/Arm64/Arm64Ex/try
+plcFSharp/Arm64/assembly/driver.o
+plcFSharp/Arm64/assembly/macfacc
+plcFSharp/Arm64/assembly/macfib
+plcFSharp/Arm64/assembly/macsimple
+
+
+# Do not include microJ generated files
+plcFSharp/MicroJ/JLex.fs
+plcFSharp/MicroJ/JLex.fsi
+plcFSharp/MicroJ/JPar.fs
+plcFSharp/MicroJ/JPar.fsi
+
+# Do not include ListC generated files
+plcFSharp/ListC/CLex.fs
+plcFSharp/ListC/CLex.fsi
+plcFSharp/ListC/CPar.fs
+plcFSharp/ListC/CPar.fsi
+
+# Do not include micro-C machine
+plcFSharp/MicroC/machine
+plcFSharp/MicroC/CLex.fs
+plcFSharp/MicroC/CLex.fsi
+plcFSharp/MicroC/CPar.fs
+plcFSharp/MicroC/CPar.fsi
+plcFSharp/MicroC/machine.exe
