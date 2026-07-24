@@ -81,7 +81,7 @@ or
 or straight from
 [Springer](http://www.springer.com/gp/book/9783319607887).
 
-[Errata for the third edition](./plc3rd/errata3rd.md).
+[Errata for the third edition](plc3rd/errata3rd.md).
 
 
 ## Bibliographic data, second edition (2017)
