@@ -48,6 +48,8 @@ plcFSharp/Fun/FunLex.fs
 plcFSharp/Fun/FunPar.fs
 plcFSharp/Fun/*.class
 
+plcFSharp/Imp/a.out
+
 # Do not include Java SE 25 auto generated folder.
 plcFSharp/MicroJ/JavaEx/Javac
 
