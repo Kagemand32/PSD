@@ -59,6 +59,8 @@ plcFSharp/MicroJ/Cpp/main
 # Do not include micro VM build targets.
 plcFSharp/MicroVM/microvm
 plcFSharp/MicroVM/microvm.exe
+plcFSharp/MicroVM/microvm_wgc.c
+
 
 # Do not include dotnet generated files.
 bin/
@@ -90,6 +92,7 @@ plcFSharp/ListC/CLex.fs
 plcFSharp/ListC/CLex.fsi
 plcFSharp/ListC/CPar.fs
 plcFSharp/ListC/CPar.fsi
+plcFSharp/ListC/LictcEx/*.out
 
 # Do not include micro-C machine
 plcFSharp/MicroC/machine
