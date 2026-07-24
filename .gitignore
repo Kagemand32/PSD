@@ -98,3 +98,6 @@ plcFSharp/MicroC/CLex.fsi
 plcFSharp/MicroC/CPar.fs
 plcFSharp/MicroC/CPar.fsi
 plcFSharp/MicroC/machine.exe
+plcFSharp/MicroC/machine
+plcFSharp/MicroC/CEx/*.out
+plcFSharp/MicroC/out
