@@ -96,6 +96,7 @@ plcFSharp/MicroJ/JLex.fs
 plcFSharp/MicroJ/JLex.fsi
 plcFSharp/MicroJ/JPar.fs
 plcFSharp/MicroJ/JPar.fsi
+plcFSharp/MicroJ/Cpp/main
 
 # Do not include ListC generated files
 plcFSharp/ListC/CLex.fs
