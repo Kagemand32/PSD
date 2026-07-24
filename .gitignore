@@ -18,7 +18,6 @@
 .DS_Store
 
 # Do not include LaTeX generated files.
-plc3rd/*.pdf
 plc3rd/*.aux
 plc3rd/*.idx
 plc3rd/*.log
