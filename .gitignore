@@ -28,6 +28,8 @@ plc3rd/figs/*.bak
 plc3rd/figs/*-eps-converted-to.pdf
 
 plcFSharp/Intro/*.class
+plcFSharp/Intcomp/*.class
+plcFSharp/Intcomp/*.pdf
 
 # Do not include Java SE 25 auto generated folder.
 plcFSharp/MicroJ/JavaEx/Javac
