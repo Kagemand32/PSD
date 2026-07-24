@@ -30,6 +30,8 @@ plc3rd/figs/*-eps-converted-to.pdf
 plcFSharp/Intro/*.class
 plcFSharp/Intcomp/*.class
 plcFSharp/Intcomp/*.pdf
+plcFSharp/Usql/UsqlLex.fsi
+plcFSharp/Usql/UsqlPar.fsi
 
 # Do not include Java SE 25 auto generated folder.
 plcFSharp/MicroJ/JavaEx/Javac
