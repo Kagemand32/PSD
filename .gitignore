@@ -50,6 +50,9 @@ plcFSharp/Fun/*.class
 
 plcFSharp/Imp/a.out
 
+plcFSharp/Cont/testlongjmp
+plcFSharp/Cont/Factorial/*.class
+
 # Do not include Java SE 25 auto generated folder.
 plcFSharp/MicroJ/JavaEx/Javac
 
@@ -60,7 +63,6 @@ plcFSharp/MicroJ/Cpp/main
 plcFSharp/MicroVM/microvm
 plcFSharp/MicroVM/microvm.exe
 plcFSharp/MicroVM/microvm_wgc.c
-
 
 # Do not include dotnet generated files.
 bin/
