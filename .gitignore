@@ -83,6 +83,14 @@ plcFSharp/Arm64/assembly/macfib
 plcFSharp/Arm64/assembly/macsimple
 
 
+# Do not include microSML generated files
+plcFSharp/MicroSML/FunLex.fs
+plcFSharp/MicroSML/FunLex.fsi
+plcFSharp/MicroSML/FunPar.fs
+plcFSharp/MicroSML/FunPar.fsi
+plcFSharp/MicroSML/AbsynAlphaConv.fs
+plcFSharp/MicroSML/SmlEx/*.out
+
 # Do not include microJ generated files
 plcFSharp/MicroJ/JLex.fs
 plcFSharp/MicroJ/JLex.fsi
