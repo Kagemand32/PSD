@@ -89,9 +89,12 @@ TODO
       page]( http://www.springer.com/gp/book/9783319607887) at
       Springer.  Front matter and back matter are freely available.
 
-      Order it from [Amazon.com](https://www.amazon.com/Programming-Language-Concepts-Undergraduate-Computer-ebook/dp/B075BGDD4P) or [Amazon.co.uk](https://www.amazon.co.uk/Programming-Language-Concepts-Undergraduate-Computer/dp/331960788X/) or straight from [Springer](http://www.springer.com/gp/book/9783319607887).
-
-[Errata for the second edition](errata2nd.md).
+Order it from
+[Amazon.com](https://www.amazon.com/Programming-Language-Concepts-Undergraduate-Computer-ebook/dp/B075BGDD4P)
+or
+[Amazon.co.uk](https://www.amazon.co.uk/Programming-Language-Concepts-Undergraduate-Computer/dp/331960788X/)
+or straight from
+[Springer](http://www.springer.com/gp/book/9783319607887).
 
 ## Bibliographic data, first edition (2012)
 
@@ -102,4 +105,3 @@ TODO
     page](http://www.springer.com/computer/swe/book/978-1-4471-4155-6)
     at Springer. Front matter and back matter is freely available.
 
-[Errata for the first edition](errata1st.md).
