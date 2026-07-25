@@ -126,7 +126,7 @@ Compile and run example illustrating longjmp and setjmp in C (under
 Linux and MacOS):
 
 We recommend using `clang` as compiler. See [Platform
-Dependencies](../../README.md) on how to install across platforms.
+Dependencies](../README.md) on how to install across platforms.
 
 ```bash
 clang testlongjmp.c -o testlongjmp
