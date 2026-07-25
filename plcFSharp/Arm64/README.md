@@ -67,7 +67,7 @@ clang -Wall -c driver.c
 ```
 
 ```bash
-clang -arch arm64 ex11.s driver.o -o try11
+clang -arch arm64 Arm64Ex/ex11.s driver.o -o try11
 ```
 
 ```bash
