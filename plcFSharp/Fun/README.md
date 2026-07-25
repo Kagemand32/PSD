@@ -41,6 +41,9 @@ dotnet fsi Absyn.fs Fun.fs
 open Absyn;;
 open Fun;;
 let res = run (Prim("+", CstI 5, CstI 7));;
+```
+
+```fsharp
 #q;;
 ```
 
@@ -67,8 +70,17 @@ dotnet fsi -r bin/Debug/net10.0/FsLexYacc.Runtime.dll Absyn.fs FunPar.fs FunLex.
 ```fsharp
 open Parse;;	 
 let e1 = fromString "5+7";;
+```
+
+```fsharp
 let e2 = fromString "let y = 7 in y + 2 end";;
+```
+
+```fsharp
 let e3 = fromString "let f x = x + 7 in f 2 end";;
+```
+
+```fsharp
 #q;;
 ```
 
@@ -82,8 +94,17 @@ dotnet fsi -r bin/Debug/net10.0/FsLexYacc.Runtime.dll Absyn.fs FunPar.fs FunLex.
 ```fsharp
 open ParseAndRun;;
 run (fromString "5+7");;
+```
+
+```fsharp
 run (fromString "let y = 7 in y + 2 end");;
+```
+
+```fsharp
 run (fromString "let f x = x + 7 in f 2 end");;
+```
+
+```fsharp
 #q;;
 ```
 
@@ -97,11 +118,17 @@ dotnet fsi Absyn.fs HigherFun.fs
 ```fsharp
 open HigherFun;;
 eval ex1 [];;
+```
+
+```fsharp
 open Absyn;;
 run (Letfun ("twice", "f",
              Letfun ("g", "x", Call (Var "f", Call (Var "f", Var "x")), Var "g"),
                      Letfun ("mul3", "z", Prim ("*", Var "z", CstI 3),
                              Call (Call (Var "twice",Var "mul3"),CstI 2))));;
+```
+
+```fsharp
 #q;;
 ```
 
@@ -119,6 +146,9 @@ dotnet fsi -r bin/Debug/net10.0/FsLexYacc.Runtime.dll Absyn.fs FunPar.fs FunLex.
 open ParseAndRunHigher;;
 run (fromString @"let twice f = let g x = f(f(x)) in g end 
                   in let mul3 z = z*3 in twice mul3 2 end end");;
+```
+
+```fsharp
 #q;;
 ```
 
@@ -131,8 +161,11 @@ dotnet fsi -r bin/Debug/net10.0/FsLexYacc.Runtime.dll Absyn.fs FunPar.fs FunLex.
 ```fsharp
 open ParseAndType;;
 inferType (fromString "let f x = 1 in f 7 + f false end");;
+```
+
+```fsharp
 #q;;
-```   
+```
 
 ## G. The see the number of type variables explode, load
    slowTypeInference.fsx to let F#'s type inference work on it:
@@ -154,6 +187,9 @@ dotnet fsi -r bin/Debug/net10.0/FsLexYacc.Runtime.dll Absyn.fs FunPar.fs FunLex.
 ```fsharp
 open ParseAndType;;
 slowTypeInferenceExample();;
+```
+
+```fsharp
 #q;;
 ```
 
@@ -161,6 +197,8 @@ slowTypeInferenceExample();;
 
 ```bash
 javac LinkedList.java
+```
 
+```bash
 java TestLinkedList
 ```
