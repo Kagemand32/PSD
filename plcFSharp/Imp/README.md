@@ -20,18 +20,22 @@ dotnet fsi Naive.fs
 ```fsharp
 open Naive;;
 run ex1;;
+```
+
+```fsharp
 run ex2;;
 #q;;
 ```
    
-## B. One MacOs and Linux use the clang C compiler to compile array.c
-   into a.out:
+## B. Compiling ```array.c```
+
+Use clang C compiler to compile ```array.c``` on your platform. E.g., on MacOS:
 
 ```bash
 clang array.c
 ```
 
-and then execute the result program `a.out` in a terminal.
+and then execute the result program in a terminal. E.g., on MacOS:
 
 ```bash
 ./a.out
@@ -39,9 +43,6 @@ and then execute the result program `a.out` in a terminal.
 22 22
 11 22
 ```
-
-On Windows ... TODO
-
 
 ## C. To run Parameters example:
 
