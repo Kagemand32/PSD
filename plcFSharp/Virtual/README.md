@@ -35,7 +35,7 @@ To disassemble `Selsort.dll`, you need the tool `ilspycmd`.
 Check whether `ilspycmd` is already installed:
 
 ```bash
-% dotnet tool list -g
+dotnet tool list -g
 ```
 
 ```bash
