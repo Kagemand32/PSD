@@ -39,20 +39,23 @@ Make `MicroJ` the current working directory.
 
 To build the compiler, run:
 
-```text
+```bash
 dotnet build microjc.fsproj
 ```
 
 or simply:
 
-```text
+```bash
 dotnet build
 ```
 
 For example:
 
-```text
-% dotnet build
+```bash
+dotnet build
+```
+
+```bash
 Restore complete (0.1s)
 microjc net10.0 succeeded (0.1s) → bin/Debug/net10.0/microjc.dll
 
@@ -64,36 +67,35 @@ whenever either `JLex.fsl` or `JPar.fsy` has changed.
 
 The compiled compiler executable is placed in:
 
-```text
+```bash
 bin/Debug/net10.0/microjc.dll
 ```
-
----
 
 ## Compiling a micro-Java Program
 
 To compile a micro-Java program, for example `JavaEx/ex01.java`, run:
 
-```text
+```bash
 dotnet run JavaEx/ex01.java
 ```
 
 This compiles `ex01.java` from the `JavaEx` directory and generates
 the output file:
 
-```text
+```bash
 JavaEx/ex01.out
 ```
 
 Example:
 
-```text
-% dotnet run JavaEx/ex01.java
+```bash
+dotnet run JavaEx/ex01.java
+```
+
+```bash
 Micro-Java compiler v 1.00 of 2026-04-05
 Compiling JavaEx/ex01.java to JavaEx/ex01.out.
 ```
-
----
 
 ## Compiler Options
 
@@ -107,13 +109,11 @@ The compiler supports the following command-line options:
 
 Example:
 
-```text
+```bash
 dotnet run -debug -verbose -genJavac JavaEx/ex01.java
 ```
 
 Options may be combined arbitrarily.
-
----
 
 ## The Micro Virtual Machine
 
@@ -128,8 +128,6 @@ The result is an executable named:
 
 located in the `MicroVM` directory.
 
----
-
 ## A Complete Example
 
 The following example demonstrates compiling and executing
@@ -139,35 +137,39 @@ The following example demonstrates compiling and executing
 
 2. Compile the program:
 
-   ```text
-   % dotnet run JavaEx/ex55.java
-   Micro-Java compiler v 1.00 of 2026-04-05
-   Compiling JavaEx/ex55.java to JavaEx/ex55.out.
-   ```
+```bash
+dotnet run JavaEx/ex55.java
+```
+
+```bash
+Micro-Java compiler v 1.00 of 2026-04-05
+Compiling JavaEx/ex55.java to JavaEx/ex55.out.
+```
    
 3. Run the compiled program using micro-VM:
 
-   ```text
-   % ../MicroVM/microvm JavaEx/ex55.out 5
-   1 3 5 2 4
-   1 4 2 5 3
-   2 4 1 3 5
-   2 5 3 1 4
-   3 1 4 2 5
-   3 5 2 4 1
-   4 1 3 5 2
-   4 2 5 3 1
-   5 2 4 1 3
-   5 3 1 4 2
+```bash
+../MicroVM/microvm JavaEx/ex55.out 5
+```
 
-   10
+```bash
+1 3 5 2 4
+1 4 2 5 3
+2 4 1 3 5
+2 5 3 1 4
+3 1 4 2 5
+3 5 2 4 1
+4 1 3 5 2
+4 2 5 3 1
+5 2 4 1 3
+5 3 1 4 2
 
-   Result value: #38361117416
-   Used 6 cpu milli-seconds
-   Number of GC: 0
-   ```
+10
 
----
+Result value: #38361117416
+Used 6 cpu milli-seconds
+Number of GC: 0
+```
 
 ## Micro-Java Example Programs
 
@@ -188,16 +190,17 @@ corresponding type rule (see Chapter 14).
 
 Example:
 
-```text
-% dotnet run JavaEx/exF34.java
+```bash
+dotnet run JavaEx/exF34.java
+```
+
+```bash
 Micro-Java compiler v 1.00 of 2026-04-05
 Compiling JavaEx/exF34.java to JavaEx/exF34.out.
 
 Type error on line 6, column 8:
   Variable i is already declared, (D-Var).
 ```
-
----
 
 ## Java SE 25 Compliance
 
@@ -213,8 +216,11 @@ file can then be compiled using `javac` and executed using `java`.
 
 Using `ex55.java` as an example:
 
-```text
-% dotnet run -genJavac JavaEx/ex55.java
+```bash
+dotnet run -genJavac JavaEx/ex55.java
+```
+
+```bash
 Micro-Java compiler v 1.00 of 2026-04-05
 Compiling JavaEx/ex55.java to JavaEx/ex55.out.
 
@@ -224,10 +230,15 @@ GENJAVAC: Generated javac program in file JavaEx/Javac/ex55.java
 From the `JavaEx/Javac` directory, compile and execute the generated
 program:
 
-```text
-% javac ex55.java
-% java Main 5
+```bash
+javac ex55.java
+```
 
+```bash
+java Main 5
+```
+
+```bash
 1 3 5 2 4
 1 4 2 5 3
 2 4 1 3 5
@@ -242,13 +253,11 @@ program:
 10
 ```
 
----
-
 ## Micro-Java Test Suite
 
 Micro-Java includes an automated test suite located in:
 
-```text
+```bash
 JavaEx/test.fsx
 ```
 
@@ -273,9 +282,11 @@ successfully with Java SE 25+**
 
 Run the test suite from the `JavaEx` directory:
 
-```text
-% dotnet fsi test.fsx
+```bash
+dotnet fsi test.fsx
+```
 
+```bash
 Compiling file: ex01.java
 
   java SE 25 out: "42 43
@@ -323,6 +334,6 @@ The test script:
 - summarizes the results at the end,
 - works across multiple platforms.
 
-> **Note:** The test suite runs relatively slowly because it launches
+> **Note:** The test suite runs relatively slow because it launches
     external system processes to compile and execute the programs.
 
