@@ -65,6 +65,9 @@ Machine bytecode into text file `Selsort.jvmbytecode`:
 
 ```bash
 javac Selsort.java
+```
+
+```bash
 javap -verbose -c -p Selsort > Selsort.jvmbytecode
 ```
 
