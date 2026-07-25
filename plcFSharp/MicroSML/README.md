@@ -28,20 +28,23 @@ Make `MicroSML` current directory.
 
 To build the compiler, run:
 
-```text
+```bash
 dotnet build microsmlc.fsproj
 ```
 
 or simply:
 
-```text
-    dotnet build
+```bash
+dotnet build
 ```
 
 For example:
 
-```text
-% dotnet build
+```bash
+dotnet build
+```
+
+```bash
 Restore complete (0,1s)
 microsmlc net10.0 succeeded (0,1s) → bin/Debug/net10.0/microsmlc.dll
 
@@ -53,35 +56,35 @@ whenever either `FunLex.fsl` or `FunPar.fsy` has changed.
 
 The compiled compiler executable is placed in:
 
-```text
+```bash
 bin/Debug/net10.0/microsmlc.dll
 ```
----
 
 ## Compiling a micro-SML program
 
 To compile a micro-SML program, for example `SmlEx/ex01.sml`, run:
 
-```text
-    dotnet run SmlEx/ex01.sml
+```bash
+dotnet run SmlEx/ex01.sml
 ```
 
 This compiles `ex01.sml` from the `SmlEx` directory and generates the
 output file:
 
-```text
-ex01.out.
+```bash
+ex01.out
 ```
 
 Example:
 
-```text
-% dotnet run SmlEx/ex01.sml
+```bash
+dotnet run SmlEx/ex01.sml
+```
+
+```bash
 Micro-SML compiler v 2.0 of 2026-05-30
 Compiling SmlEx/ex01.sml to SmlEx/ex01.out.
 ```
-
----
 
 ## Compiler options
 
@@ -97,13 +100,11 @@ The compiler supports below options:
 
 Example:
 
-```text
+```bash
 dotnet run -eval -verbose SmlEx/ex01.sml
 ```
 
 Options can be combined arbitrarily.
-
----
 
 ## The Micro virtual machine
 
@@ -118,8 +119,6 @@ The result is an executable named:
 
 located in the `MicroVM` directory.
 
----
-
 ## A complete example
 
 The following example demonstrates compiling and executing
@@ -129,26 +128,30 @@ The following example demonstrates compiling and executing
 
 2. Compile the program
 
-   ```text
-   % dotnet run SmlEx/queens.sml
-   Micro-SML compiler v 2.0 of 2026-05-30
-   Compiling SmlEx/queens.sml to SmlEx/queens.out.
-   ```
+```bash
+dotnet run SmlEx/queens.sml
+```
+
+```bash
+Micro-SML compiler v 2.0 of 2026-05-30
+Compiling SmlEx/queens.sml to SmlEx/queens.out.
+```
 
 3. Run the compiled program using micro-VM:
 
-   ```text
-   % ../MicroVM/microvm SmlEx/queens.out
+```bash
+../MicroVM/microvm SmlEx/queens.out
+```
 
-   [[[6,5] ,[5,3] ,[4,1] ,[3,6] ,[2,4] ,[1,2] ] ,
-    [[5,4] ,[4,2] ,[3,5] ,[2,3] ,[1,1] ] ,
-    [[4,3] ,[3,1] ,[2,4] ,[1,2] ] ,[] ,[] ,[[1,1] ] ]
+```bash
+[[[6,5] ,[5,3] ,[4,1] ,[3,6] ,[2,4] ,[1,2] ] ,
+  [[5,4] ,[4,2] ,[3,5] ,[2,3] ,[1,1] ] ,
+  [[4,3] ,[3,1] ,[2,4] ,[1,2] ] ,[] ,[] ,[[1,1] ] ]
 
-   Result value: #33629982712
-   Used 1 cpu milli-seconds
-   Number of GC: 0
-   ```
----
+Result value: #33629982712
+Used 1 cpu milli-seconds
+Number of GC: 0
+```
 
 ## Micro-SML example programs
 
@@ -168,21 +171,22 @@ that cannot be unified.
 
 Example:
 
-```text
-% dotnet run SmlEx/exF02.sml
+```bash
+dotnet run SmlEx/exF02.sml
+```
+
+```bash
 Micro-SML compiler v 2.0 of 2026-05-30
 Compiling SmlEx/exF02.sml to SmlEx/exF02.out.
 
 Type error: bool and int
 ```
 
----
-
 ## Micro-SML test suite
 
 Micro-SML includes an automated test suite located in:
 
-```text
+```bash
 SmlEx/test.fsx
 ```
 
@@ -200,9 +204,11 @@ These verify static and dynamic semantic compliance.
 
 Run the test suite from the `SmlEx` directory:
 
-```text
-% dotnet fsi test.fsx
+```bash
+dotnet fsi test.fsx
+```
 
+```bash
 Setting current directory to MicroSML
 Delete all *.out files in SmlEx directory.
 Compiling file with options -eval: ex01.sml
