@@ -34,14 +34,14 @@ dotnet build
 Use the command-line compiler:
 
 ```bash
-dotnet run ex11.c --project microccarm64.fsproj
+dotnet run Arm64Ex/ex11.c --project microccarm64.fsproj
 ```
 
 This should output something like:
 
 ```bash
 Micro-C register-based Arm64 compiler v 0.0.0.1 of 2026-02-16
-Compiling ex11.c to ex11.s
+Compiling Arm64Ex/ex11.c to Arm64Ex/ex11.s
 ```
 
 ### Assemble, link and run the compiled examples
