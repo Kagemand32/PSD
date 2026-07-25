@@ -117,6 +117,7 @@ To compile and run the Java program, with verbose garbage collection
 messages:
 
 ```bash
+cd StringConcatSpeed
 javac StringConcatSpeed.java
 ```
 
@@ -127,7 +128,6 @@ java -verbosegc StringConcatSpeed
 To compile and run the C# program in folder `StringConcatSpeed`:
 
 ```bash
-cd StringConcatSpeed
 dotnet -c Release build StringConcatSpeed.csproj
 ```
 
