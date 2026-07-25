@@ -20,7 +20,7 @@ Some example lecture slides are found below
 |11 | [Continuations](./chap11Continuations.pdf) | Cont |
 |12 | [A Locally Optimizing Compiler](./chap12ALocallyOptimizingCompiler.pdf) | MicroC, MicroVM |
 |13 | [Compiling Micro-SML](./chap13CompilingMicro-SML.pdf) | MicroSML, MicroVM |
-|14 | [Typing Micro-Java (TODO)](./chap14TypingMicro-Java.pdf) | MicroJava, MicroVM |
-|15 | [Compiling Micro-Java (TODO)](./chap15CompilingMicro-Java.pdf) | MicroJava, MicroVM |
-|16 | [Real Machine Code: Arm64 (TODO)](./chap16RealMachineCode_Arm64.pdf) | Arm64 |
-| A | [Crash Course in F#](./fsharpIntro.pdf.pdf) | Intro/Appendix.fs |
+|14 | [Typing Micro-Java (Not available yet)](./chap14TypingMicro-Java.pdf) | MicroJava, MicroVM |
+|15 | [Compiling Micro-Java (Not available yet)](./chap15CompilingMicro-Java.pdf) | MicroJava, MicroVM |
+|16 | [Real Machine Code: Arm64 (Not available yet)](./chap16RealMachineCode_Arm64.pdf) | Arm64 |
+| A | [Crash Course in F#](./fsharpIntro.pdf) | Intro/Appendix.fs |
