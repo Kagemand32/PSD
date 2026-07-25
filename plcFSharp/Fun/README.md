@@ -116,8 +116,10 @@ run (fromString "let f x = x + 7 in f 2 end");;
 #q;;
 ```
 
-## D. Loading the evaluator for a higher-order functional language (same
-   abstract syntax as the first-order language):
+## D. Build the lexer, parser and higher-order evaluator
+
+Loading the evaluator for a higher-order functional language (same
+abstract syntax as the first-order language):
 
 ```bash
 dotnet fsi Absyn.fs HigherFun.fs
