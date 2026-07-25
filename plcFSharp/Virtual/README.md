@@ -84,6 +84,9 @@ This will compile and run the C# program in folder `CircularQueue`:
 ```bash
 cd CircularQueue
 dotnet build CircularQueue.csproj
+```
+
+```bash
 dotnet run
 ```
 
@@ -112,6 +115,9 @@ messages:
 
 ```bash
 javac StringConcatSpeed.java
+```
+
+```bash
 java -verbosegc StringConcatSpeed
 ```
 
@@ -120,6 +126,9 @@ To compile and run the C# program in folder `StringConcatSpeed`:
 ```bash
 cd StringConcatSpeed
 dotnet -c Release build StringConcatSpeed.csproj
+```
+
+```bash
 dotnet run
 ```
 
@@ -169,6 +178,9 @@ Compile in Debug mode, run, and put the bytecode code in
 ```bash
 cd Square
 dotnet build Square.csproj
+```
+
+```bash
 dotnet run
 ```
 
@@ -181,7 +193,9 @@ bytecode in `Square-release.il`:
 
 ```bash
 dotnet build -c Release Square.csproj
+```
 
+```bash
 ilspycmd -il bin/Release/net10.0/Square.dll > Square-release.il
 ```
 
@@ -194,8 +208,13 @@ Folder `Ex26` contains programs `Ex26.java` and `Ex26.cs` with method
 ```bash
 cd Ex26
 dotnet build -c Release Ex26.csproj
-dotnet run 1000000
+```
 
+```bash
+dotnet run 1000000
+```
+
+```bash
 ilspycmd -il bin/Release/net10.0/Ex26.dll > Ex26.il
 ```
 
@@ -218,7 +237,13 @@ To compile `Ex26.java` and disassemble it to bytecode:
 
 ```bash
 javac Ex26.java
+```
+
+```bash
 java Ex26 1000000
+```
+
+```bash
 javap -c -p Ex26 > Ex26.jvmbytecode
 ```
 
@@ -240,7 +265,13 @@ machine code corresponding for method `isPrime` by searching for
 ```bash
 cd Ex6
 javac ex6java.java
+```
+
+```bash
 java ex6java
+```
+
+```bash
 javap -c -p LinkedList
 ```
 
