@@ -13,9 +13,7 @@ evaluation.
 You need the folder `Arm64`.
 
 To assemble, link and run Arm64 assembly programs, see
-   `assembly/README`.
-
----
+`assembly/README`.
 
 ## Build the Arm64-generating micro-C compiler and use it
 
@@ -31,8 +29,6 @@ There are three steps
 dotnet build
 ```
 
----
-
 ### Compile micro-C example programs to Arm64 assembly
 
 Use the command-line compiler:
@@ -43,12 +39,10 @@ dotnet run ex11.c --project microccarm64.fsproj
 
 This should output something like:
 
-```text
+```bash
 Micro-C register-based Arm64 compiler v 0.0.0.1 of 2026-02-16
 Compiling ex11.c to ex11.s
 ```
-
----
 
 ### Assemble, link and run the compiled examples
 
@@ -56,7 +50,13 @@ Compiling ex11.c to ex11.s
 
 ```bash
 clang -Wall -c driver.c
+```
+
+```bash
 clang ex11.s driver.o -o try11
+```
+
+```bash
 ./try11 8
 ```
 
@@ -64,12 +64,16 @@ clang ex11.s driver.o -o try11
 
 ```bash
 clang -c driver.c
+```
+
+```bash
 clang -arch arm64 ex11.s driver.o -o try11
+```
+
+```bash
 ./try11 8
 ```
 
 #### On MS Windows with Arm64
 
-```text
-XXXXXXX TO DO XXXXXXX
-```
+Not supported.
