@@ -26,7 +26,7 @@ Load the generated lexer and parser and exercise them in F#
 interactive:
 
 ```bash
-dotnet fsi -r bin/Debug/net10.0/FsLexYacc.Runtime.dll
+dotnet fsi -r bin/Debug/net10.0/FsLexYacc.Runtime.dll \
        Absyn.fs ExprPar.fs ExprLex.fs Parse.fs
 ```
 
