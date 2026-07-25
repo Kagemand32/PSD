@@ -28,20 +28,23 @@ Make `ListC` the current working directory.
 
 To build the compiler, run:
 
-```text
+```bash
 dotnet build listc.fsproj
 ```
 
 or simply:
 
-```text
+```bash
 dotnet build
 ```
 
 For example:
 
-```text
-% dotnet build
+```bash
+dotnet build
+```
+
+```bash
 Restore complete (0.1s)
 listc net10.0 succeeded (0.1s) → bin/Debug/net10.0/listc.dll
 
@@ -62,38 +65,37 @@ and installs the runtime library:
 
 The compiled compiler executable is placed in:
 
-```text
+```bash
 bin/Debug/net10.0/listc.dll
 ```
 
 The `FsLexYacc.Runtime.dll` file is located in the same directory.
 
----
-
 ## Compiling a List-C Program
 
 To compile a List-C program, for example `ListcEx/ex30.lc`, run:
 
-```text
+```bash
 dotnet run ListcEx/ex30.lc
 ```
 
 This compiles `ex30.lc` from the `ListcEx` directory and generates the
 output file:
 
-```text
+```bash
 ListcEx/ex30.out
 ```
 
 Example:
 
-```text
-% dotnet run ListcEx/ex30.lc
+```bash
+dotnet run ListcEx/ex30.lc
+```
+
+```bash
 List-C compiler v 2.0.0.0 of 2026-06-16
 Compiling ListcEx/ex30.lc to ListcEx/ex30.out
 ```
-
----
 
 ## The Micro Virtual Machine
 
@@ -107,8 +109,6 @@ The result is an executable named:
 
 located in the `MicroVM` directory.
 
----
-
 ## A Complete Example
 
 The following example demonstrates compiling and executing `ex30.lc`.
@@ -117,23 +117,27 @@ The following example demonstrates compiling and executing `ex30.lc`.
 
 2. Compile the program:
 
-   ```text
-   % dotnet run ListcEx/ex30.lc
-   List-C compiler v 2.0.0.0 of 2026-06-16
-   Compiling ListcEx/ex30.lc to ListcEx/ex30.out
-   ```
+```bash
+dotnet run ListcEx/ex30.lc
+```
+
+```bash
+List-C compiler v 2.0.0.0 of 2026-06-16
+Compiling ListcEx/ex30.lc to ListcEx/ex30.out
+```
 
 3. Run the compiled program using the micro virtual machine:
 
-   ```text
-   % ../MicroVM/microvm ListcEx/ex30.out 10
-   10 9 8 7 6 5 4 3 2 1
-   Result value: 0
-   Used 0 cpu milli-seconds
-   Number of GC: 0
-   ```
+```bash
+../MicroVM/microvm ListcEx/ex30.out 10
+```
 
----
+```bash
+10 9 8 7 6 5 4 3 2 1
+Result value: 0
+Used 0 cpu milli-seconds
+Number of GC: 0
+```
 
 ## List-C Example Programs
 
@@ -149,24 +153,30 @@ runs out of memory unless garbage collection is enabled.
 
 Example:
 
-```text
-% dotnet run ListcEx/ex32.lc
+```bash
+dotnet run ListcEx/ex32.lc
+```
+
+```bash
 List-C compiler v 2.0.0.0 of 2026-06-16
 Compiling ListcEx/ex32.lc to ListcEx/ex32.out
+```
 
-% ../MicroVM/microvm ListcEx/ex32.out 10
+```bash
+../MicroVM/microvm ListcEx/ex32.out 10
+```
+
+```bash
 1 2 3 4 5 6 7 8 9 10
 GC[M,BS]Heap: 66667 blocks (133333 words); of which 1 free (1 words, largest 1 words); 0 orphans
 Out of memory
 ```
 
----
-
 ## List-C Test Suite
 
 List-C includes an automated test suite located in:
 
-```text
+```bash
 ListcEx/test.fsx
 ```
 
@@ -175,9 +185,11 @@ arguments and expected output are specified in the `test.fsx` file.
 
 Run the test suite from the `ListcEx` directory:
 
-```text
-% dotnet fsi test.fsx
+```bash
+dotnet fsi test.fsx
+```
 
+```bash
 Compiling file ex01.c
 
 list-C out: [10 9 8 7 6 5 4 3 2 1
