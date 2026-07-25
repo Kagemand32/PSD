@@ -20,7 +20,8 @@ clang++ cppEx01.cpp -o main
 0
 0
 42
-42`
+42
+```
 
 ```bash
 clang++ cppEx02.cpp -o main
