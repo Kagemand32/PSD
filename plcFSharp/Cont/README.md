@@ -13,8 +13,10 @@ have more than one continuation (and so model exception handling and
 backtracking).
 
 
-## A. Loading two continuation-based interpreters for a functional
-   language with exceptions:
+## A. Two continuation-based interpreters for functional language
+
+Loading two continuation-based interpreters for a functional language
+with exceptions:
 
 ```bash
 dotnet fsi Contfun.fs
@@ -30,8 +32,10 @@ eval1 ex2 [("n", Int 10)];;
 #q;;
 ```
 
-## B. Loading two continuation-based interpreters for an imperative
-   language with exceptions:
+## B. Two continuation-based interpreters for an imperative language
+
+Loading two continuation-based interpreters for an imperative language
+with exceptions:
 
 ```bash
 dotnet fsi Contimp.fs
@@ -51,8 +55,10 @@ run2 ex3;;
 #q;;
 ```
 
-## C. Loading a continuation-based interpreter for micro-Icon, a language
-   in which an expression can have multiple results:
+## C. A continuation-based interpreter for micro-Icon
+
+Loading a continuation-based interpreter for micro-Icon, a language in
+which an expression can have multiple results:
 
 ```bash
 dotnet fsi Icon.fs
@@ -76,8 +82,10 @@ run ex3or;;
 #q;;
 ```
 
-## D. Compile and run a Java implementation of factorial in
-   continuation-passing style:
+## D. Java implementation of factorial
+
+Compile and run a Java implementation of factorial in
+continuation-passing style:
 
 ```bash
 cd Factorial/
@@ -97,8 +105,10 @@ javac Factorial2.java
 java Factorial2 10
 ```
 
-## E. Compile and run a C# implementation of factorial in
-   continuation-passing style:
+## E. C# implementation of factorial 
+
+Compile and run a C# implementation of factorial in
+continuation-passing style:
 
 ```bash
 cd Factorial/
@@ -110,10 +120,13 @@ dotnet build Factorial.csproj
 dotnet run 10
 ```
 
-## F. Compile and run example illustrating longjmp and setjmp in C (under
-   Linux and MacOS):
+## F. Example illustrating longjmp
 
-See `README` in root folder for how to install Clang.
+Compile and run example illustrating longjmp and setjmp in C (under
+Linux and MacOS):
+
+We recommend using `clang` as compiler. See [Platform
+Dependencies](../../README.md) on how to install across platforms.
 
 ```bash
 clang testlongjmp.c -o testlongjmp
