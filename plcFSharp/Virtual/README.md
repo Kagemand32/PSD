@@ -36,6 +36,9 @@ Check whether `ilspycmd` is already installed:
 
 ```bash
 % dotnet tool list -g
+```
+
+```bash
 Package Id      Version         Commands
 ----------------------------------------
 ilspycmd        10.0.1.8346     ilspycmd
