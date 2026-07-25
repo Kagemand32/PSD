@@ -114,7 +114,7 @@ The main source file is `machine.c` with two utility files
 `gcc` is `clang` by default and both work.
 
 ```bash
-% clang -Wall machine.c -o machine
+clang -Wall machine.c -o machine
 ```
 
 or
@@ -128,7 +128,7 @@ or
 Both `gcc` and `clang` should work:
 
 ```text
-% clang -Wall machine.c -o machine
+clang -Wall machine.c -o machine
 ```
 
 or
