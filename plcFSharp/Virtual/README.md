@@ -128,7 +128,7 @@ java -verbosegc StringConcatSpeed
 To compile and run the C# program in folder `StringConcatSpeed`:
 
 ```bash
-dotnet -c Release build StringConcatSpeed.csproj
+dotnet build -c Release StringConcatSpeed.csproj
 ```
 
 ```bash
