@@ -2,7 +2,7 @@
 
 Mistakes in the book or code is listed below.
 
-We very much appreciate information on mistakes. Please mail nh@itu.dk.
+We very much appreciate information on mistakes.
 
 ## Identified Mistakes in Book and Code
 
