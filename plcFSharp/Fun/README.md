@@ -54,7 +54,7 @@ let res = run (Prim("+", CstI 5, CstI 7));;
 ## B. Build and compile the lexer and parser
 
 The project ```parse.fsproj``` is used to build the lexer and parser
-specification and compile it into a working parser:
+specifications:
 
 ```bash
 dotnet build parse.fsproj
