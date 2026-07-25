@@ -148,16 +148,20 @@ The file `prog0` prints an infinite number of numbers on terminal
    starting with commandline input:
 
 ```bash
-% ./machine prog0 10
+./machine prog0 10
+```
 
+```bash
 10 11 12 13 14 15 16 ...
 ```
 
 The file `prog1` loops 20 million times
 
 ```bash
-% ./machine prog1          
+./machine prog1          
+```
 
+```bash
 Result value: 0
 ...
 ```
