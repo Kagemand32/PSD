@@ -63,7 +63,7 @@ clang ex11.s driver.o -o try11
 #### On MacOS
 
 ```bash
-clang -c driver.c
+clang -Wall -c driver.c
 ```
 
 ```bash
