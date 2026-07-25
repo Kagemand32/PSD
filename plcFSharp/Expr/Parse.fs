@@ -6,7 +6,7 @@ module Parse
 open System
 open System.IO
 open System.Text
-open (*Microsoft.*)FSharp.Text
+open FSharp.Text
 open Absyn
 
 (* Plain parsing from a string, with poor error reporting *)
@@ -32,3 +32,5 @@ let fromFile (filename : string) =
                failwithf "%s in file %s near line %d, column %d\n" 
                   (exn.Message) filename (pos.Line+1) pos.Column
 
+// Example
+let ex = fromString "2 + 3 * 4"
