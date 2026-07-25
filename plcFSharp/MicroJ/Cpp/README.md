@@ -3,15 +3,17 @@
 The C++ exampels are compiled as follows assuming Cpp is current
 directory.
 
-Windows
--------
+We use `clang++`.
 
-MacOS
------
+```bash
+clang++ cppEx01.cpp -o main
+```
 
-`bash
-Cpp % clang++ cppEx01.cpp -o main
-Cpp % ./main 
+```bash
+./main 
+```
+
+```bash
 3
 1
 2
@@ -20,9 +22,15 @@ Cpp % ./main
 42
 42`
 
-`bash
-Cpp % clang++ cppEx02.cpp -o main
-Cpp % ./main                     
+```bash
+clang++ cppEx02.cpp -o main
+```
+
+```bash
+./main
+```
+
+```bash
 3
 1
 2
@@ -30,10 +38,5 @@ Cpp % ./main
 0
 42
 0`
+```
 
-The g++ compiler also works - an alias of clang++
-
-Linux
------
-
-TODO
