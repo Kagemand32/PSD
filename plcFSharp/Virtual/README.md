@@ -101,6 +101,9 @@ Compile the Java version and disassemble its bytecode into file
 
 ```bash
 javac CircularQueue.java 
+```
+
+```bash
 javap -verbose -c -p CircularQueue > CircularQueue.jvmbytecode
 ```
 
