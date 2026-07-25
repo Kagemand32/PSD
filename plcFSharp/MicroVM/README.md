@@ -14,7 +14,7 @@
 
 ###  Mac x86 and Mx (ARM) platform with MacOS
 
-    `gcc` is `clang` by default and both work.
+`gcc` is `clang` by default and both work.
 
 ```bash
 clang -Wall microvm.c -o microvm
@@ -142,10 +142,10 @@ the size of the board on which to place queens.
 4 2 5 3 1 
 5 2 4 1 3 
 5 3 1 4 2 
- 
+
 10 
 
-Result value: 17978890612
+Result value: #52567225064 
 Used 6 cpu milli-seconds
 Number of GC: 0
 ```
