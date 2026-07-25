@@ -177,8 +177,10 @@ inferType (fromString "let f x = 1 in f 7 + f false end");;
 #q;;
 ```
 
-## G. The see the number of type variables explode, load
-   slowTypeInference.fsx to let F#'s type inference work on it:
+## G. Type variable explosion
+
+To see the number of type variables explode, load
+```slowTypeInference.fsx``` to let F#'s type inference work on it:
 
 ```bash
 dotnet fsi
