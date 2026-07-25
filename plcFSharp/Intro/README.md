@@ -17,11 +17,11 @@ resembles the latter most.  All of these languages are strict, mostly
 functional, and statically typed with parametric polymorphic type
 inference.  Microsofts .NET platform provides a high-performance
 implementation of F# on Linux, MacOS and Windows. Relevant file is
-Intro/Appendix.fs
+`Intro/Appendix.fs`.
 
 ## A. Crash Course
 
-File `Appendix.fs`` contains all examples from PLCSD Appendix A: F#
+File `Appendix.fs` contains all examples from PLCSD Appendix A: F#
 Crash Course.  There is no point in loading all of it into F#
 Interactive (fsi) in one go.  Instead, start fsi in a Command Prompt
 and copy example code from Appendix.fs to fsi.
