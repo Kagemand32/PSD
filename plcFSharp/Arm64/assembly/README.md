@@ -4,10 +4,8 @@ You need the folder `Arm64/assembly/`.
 
 All examples use the Clang compiler and its built-in assembler.
 
-See [../../README.md](Planform Dependencies) for instructions to
+See [Planform Dependencies](../../README.md) for instructions to
 install Clang and LLVM.
-
----
 
 ## 1. Linux
 
