@@ -23,6 +23,9 @@ dotnet fsi Contfun.fs
 ```fsharp
 open Contfun;;
 eval1 ex1 [];; 
+```
+
+```fsharp
 eval1 ex2 [("n", Int 10)];;
 #q;;
 ```
@@ -37,7 +40,13 @@ dotnet fsi Contimp.fs
 ```fsharp
 open Contimp;;
 run1 ex1;;
+```
+
+```fsharp
 run1 ex2;;
+```
+
+```fsharp
 run2 ex3;;
 #q;;
 ```
@@ -52,8 +61,17 @@ dotnet fsi Icon.fs
 ```fsharp
 open Icon;;
 run ex1;;
+```
+
+```fsharp
 run ex2;;
+```
+
+```fsharp
 run ex3and;;
+```
+
+```fsharp
 run ex3or;;
 #q;;
 ```
@@ -65,9 +83,17 @@ run ex3or;;
 cd Factorial/
 
 javac Factorial.java
-java Factorial 10
+```
 
+```bash
+java Factorial 10
+```
+
+```bash
 javac Factorial2.java
+```
+
+```bash
 java Factorial2 10
 ```
 
@@ -78,6 +104,9 @@ java Factorial2 10
 cd Factorial/
 
 dotnet build Factorial.csproj
+```
+
+```bash
 dotnet run 10
 ```
 
@@ -88,6 +117,12 @@ See `README` in root folder for how to install Clang.
 
 ```bash
 clang testlongjmp.c -o testlongjmp
+```
+
+```bash
 ./testlongjmp 10
+```
+
+```bash
 ./testlongjmp 11
 ```
