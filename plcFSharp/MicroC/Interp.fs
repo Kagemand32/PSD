@@ -167,6 +167,7 @@ and eval e locEnv gloEnv store : int * store =
           | "!"      -> if i1=0 then 1 else 0
           | "printi" -> (printf "%d " i1; i1)
           | "printc" -> (printf "%c" (char i1); i1)
+          | "println" -> (printf "%c" (char i1); i1)          
           | _        -> failwith ("unknown primitive " + ope)
       (res, store1) 
     | Prim2(ope, e1, e2) ->
