@@ -241,7 +241,7 @@ The test script
 - summarizes the results at the end.
 - works across multiple platforms.
 
-> **Note** The test suite runs relatively slowly because it launches
+> **Note** The test suite runs relatively slow because it launches
 external system processes to compile and execute the programs.
 
 
