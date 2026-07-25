@@ -118,9 +118,21 @@ plcFSharp/MicroC/out
 
 plcFSharp/Virtual/CircularQueue/*.class
 plcFSharp/Virtual/Ex6/*.class
+plcFSharp/Virtual/Ex6/*.jvmbytecode
+plcFSharp/Virtual/Ex6/*.il
 plcFSharp/Virtual/Ex13/*.class
+plcFSharp/Virtual/Ex13/*.jvmbytecode
+plcFSharp/Virtual/Ex13/*.il
 plcFSharp/Virtual/Ex26/*.class
+plcFSharp/Virtual/Ex26/*.jvmbytecode
+plcFSharp/Virtual/Ex26/*.il
 plcFSharp/Virtual/Selsort/*.class
 plcFSharp/Virtual/Selsort/*.jvmbytecode
 plcFSharp/Virtual/Selsort/*.il
+plcFSharp/Virtual/CircularQueue/*.jvmbytecode
+plcFSharp/Virtual/CircularQueue/*.il
 plcFSharp/Virtual/StringConcatSpeed/*.class
+plcFSharp/Virtual/StringConcatSpeed/counter.csv
+plcFSharp/Virtual/Square/*.jvmbytecode
+plcFSharp/Virtual/Square/*.il
+
