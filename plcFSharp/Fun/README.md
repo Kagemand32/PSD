@@ -190,6 +190,10 @@ dotnet fsi
 #load "slowTypeInference.fsx";;
 ```
 
+```fsharp
+#q;;
+```
+
 Same example with our own type inference:
 
 ```bash
