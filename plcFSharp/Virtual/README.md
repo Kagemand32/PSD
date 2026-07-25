@@ -142,7 +142,7 @@ dotnet-counters tool:
 dotnet tool install --global dotnet-counters
 ```
 
-Then in terminal window A, run `StringConcatSpeed`:
+Then run `StringConcatSpeed`:
 
 ```bash
 dotnet run
