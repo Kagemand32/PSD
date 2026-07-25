@@ -90,8 +90,10 @@ let e3 = fromString "let f x = x + 7 in f 2 end";;
 #q;;
 ```
 
-## C. Generating and compiling the lexer, parser and first-order
-   evaluator, and loading them together:
+## C. Build the lexer, parser and first-order evaluator
+
+Generating and compiling the lexer, parser and first-order evaluator,
+and loading them together:
 
 ```bash
 dotnet fsi -r bin/Debug/net10.0/FsLexYacc.Runtime.dll Absyn.fs FunPar.fs FunLex.fs Parse.fs Fun.fs ParseAndRun.fs
