@@ -84,7 +84,7 @@ compileToFile (fromFile "CEx/ex11.c") "CEx/ex11.out";;
 ```
 
 ```fsharp
-compile "ex11";;
+compile "CEx/ex11";;
 #q;;
 ```
 
