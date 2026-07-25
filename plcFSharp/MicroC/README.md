@@ -48,22 +48,29 @@ dotnet fsi -r bin/Debug/net10.0/FsLexYacc.Runtime.dll \
 
 Then execute:
 
-```text
+```fsharp
 open ParseAndRun;;
 fromFile "CEx/ex01.c";;
+```
+
+```fsharp
 run (fromFile "CEx/ex01.c") [17];;
+```
+
+```fsharp
 run (fromFile "CEx/ex05.c") [4];;
+```
+
+```fsharp
 run (fromFile "CEx/ex11.c") [8];;
 #q;;
 ```
-
----
 
 ## Load the Lexer, Parser, and Compiler in F# Interactive
 
 Start F# Interactive with the compiler components:
 
-```text
+```bash
 dotnet fsi -r bin/Debug/net10.0/FsLexYacc.Runtime.dll \
     Absyn.fs CPar.fs CLex.fs Parse.fs \
     Machine.fs Comp.fs ParseAndComp.fs
@@ -71,9 +78,12 @@ dotnet fsi -r bin/Debug/net10.0/FsLexYacc.Runtime.dll \
 
 Then execute:
 
-```text
+```fsharp
 open ParseAndComp;;
 compileToFile (fromFile "CEx/ex11.c") "CEx/ex11.out";;
+```
+
+```fsharp
 compile "ex11";;
 #q;;
 ```
@@ -82,13 +92,13 @@ compile "ex11";;
 
 Compile the Java implementation of the stack machine:
 
-```text
+```bash
 javac Machine.java
 ```
 
 Execute the compiled micro-C program:
 
-```text
+```bash
 java Machine CEx/ex11.out 8
 ```
 
@@ -96,20 +106,20 @@ java Machine CEx/ex11.out 8
 
 #### Building the micro virtual machine
 
-  The main source file is `machine.c` with two utility files
-  `utils_unix.c` and `utils_win.c` depending on platform.
+The main source file is `machine.c` with two utility files
+`utils_unix.c` and `utils_win.c` depending on platform.
 
 ####  Mac x86 and Mx (ARM) platform with MacOS
 
-    `gcc` is `clang` by default and both work.
+`gcc` is `clang` by default and both work.
 
-```text
+```bash
 % clang -Wall machine.c -o machine
 ```
 
 or
 
-```text
+```bash
 % gcc -Wall machine.c -o machine
 ```
 
@@ -129,34 +139,15 @@ or
 
 #### On x86 platform with Windows
 
-We recommend using `clang` as compiler.
-
-There are two dependencies that much be installed:
-
-1. [MSVC toolchain](https://visualstudio.microsoft.com/visual-cpp-build-tools/)
-
-Minimum choose "Visual Studio Build Tools".
-
-2. `clang` for Windows x86, [llvm](https://releases.llvm.org)
-
-  Tested with image: `LLVM-22.1.0-win64.exe`
-
-  To compile:
-
-```text
-clang --target=x86_64-pc-windows-msvc -Wall microvm.c -o microvm.exe
-```
-
-#### On ARM platform with Widnows
-
-  TODO
+We recommend using `clang` as compiler. See [Platform
+Dependencies](../../README.md) on how to install across platforms.
 
 ## Simple test of micro-VM
 
 The file `prog0` prints an infinite number of numbers on terminal
    starting with commandline input:
 
-```text
+```bash
 % ./machine prog0 10
 
 10 11 12 13 14 15 16 ...
@@ -164,7 +155,7 @@ The file `prog0` prints an infinite number of numbers on terminal
 
 The file `prog1` loops 20 million times
 
-```text
+```bash
 % ./machine prog1          
 
 Result value: 0
@@ -173,17 +164,15 @@ Result value: 0
 
 Execute the compiled target program `ex11.out`:
 
-```text
+```bash
 ./machine CEx/ex11.out 8
 ```
-
----
 
 ## Load the Backwards (Continuation-Based) micro-C Compiler
 
 Start F# Interactive with the continuation-based compiler:
 
-```text
+```bash
 dotnet fsi -r bin/Debug/net10.0/FsLexYacc.Runtime.dll \
     Absyn.fs CPar.fs CLex.fs Parse.fs \
     Machine.fs Contcomp.fs ParseAndComp.fs
@@ -191,49 +180,55 @@ dotnet fsi -r bin/Debug/net10.0/FsLexYacc.Runtime.dll \
 
 Then execute:
 
-```text
+```fsharp
 open ParseAndComp;;
 compileToFile (fromFile "CEx/ex11.c") "CEx/ex11.out";;
+```
+
+```fsharp
 compile "CEx/ex11";;
 #q;;
 ```
 
 Run the generated code using the Java stack machine:
 
-```text
+```bash
 javac Machine.java
-java Machine CEx/ex11.out 8
 ```
 
----
+```bash
+java Machine CEx/ex11.out 8
+```
 
 ## Build the Backwards micro-C Command-Line Compiler
 
 Build the command-line compiler:
 
-```text
+```bash
 dotnet build microcc.fsproj
 ```
 
 Compile a micro-C program:
 
-```text
+```bash
 dotnet run CEx/ex11.c --project microcc.fsproj
 ```
 
 Run the generated code using the Java stack machine:
 
-```text
+```bash
 javac Machine.java
+```
+
+```bash
 java Machine CEx/ex11.out 8
 ```
 
----
-
 ## Build the Forwards micro-C Command-Line Compiler
 
-The project file `microcc.fsproj` can also be used to compile the forwards
-micro-C command-line compiler. Simply include `Comp.fs` instead of `Contcomp.fs`:
+The project file `microcc.fsproj` can also be used to compile the
+forwards micro-C command-line compiler. Simply include `Comp.fs`
+instead of `Contcomp.fs`:
 
 ```xml
 ...
@@ -252,14 +247,11 @@ micro-C command-line compiler. Simply include `Comp.fs` instead of `Contcomp.fs`
 
 You can repeat the build and run steps shown in previous section.
 
-
----
-
 ## Micro-C Test Suite
 
 Micro-C includes an automated test suite located in:
 
-```text
+```bash
 CEx/test.fsx
 ```
 
@@ -268,8 +260,11 @@ arguments and expected output are specified in the `test.fsx` file.
 
 Run the test suite from the `CEx` directory:
 
-```text
+```bash
 % dotnet fsi test.fsx
+```
+
+```bash
 Compiling file ex01.c
 
 10 9 8 7 6 5 4 3 2 1 
