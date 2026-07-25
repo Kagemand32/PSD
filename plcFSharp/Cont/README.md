@@ -2,7 +2,7 @@
 
 Chapter 11 introduces the concept of continuation, which helps
 understand such notions as tail call, exceptions and exception
-handling, execution stack, and back- tracking.  A continuation is an
+handling, execution stack, and backtracking.  A continuation is an
 explicit representation of the rest of the computation.  Usually this
 is implicit in a program: after executing one statement, the
 computation will continue with the next statement; when returning from
