@@ -265,7 +265,7 @@ arguments and expected output are specified in the `test.fsx` file.
 Run the test suite from the `CEx` directory:
 
 ```bash
-% dotnet fsi test.fsx
+dotnet fsi test.fsx
 ```
 
 ```bash
