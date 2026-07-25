@@ -30,6 +30,8 @@ Now you can exercise the lexer and parser from within the F# session:
 ```fsharp
 open Parse;;
 fromString "SELECT Employee.name, salary * (1 - taxrate) FROM Employee";;
+```
 
+```fsharp
 #q;;
 ```
