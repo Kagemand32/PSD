@@ -3,14 +3,14 @@
 Chapter 11 introduces the concept of continuation, which helps
 understand such notions as tail call, exceptions and exception
 handling, execution stack, and back- tracking.  A continuation is an
-explicit representation of the rest of the compu-tation.
-Usually this is implicit in a program: after executing one statement,
-the computation will continue with the next statement; when returning
-from a method, the computation will continue where the method was
-called; and so on.  Making the continuation explicit has the advantage
-that we can ignore it (and so model abnormal termination), and that we
-can have more than one continuation (and so model exception handling
-and backtracking).
+explicit representation of the rest of the computation.  Usually this
+is implicit in a program: after executing one statement, the
+computation will continue with the next statement; when returning from
+a method, the computation will continue where the method was called;
+and so on.  Making the continuation explicit has the advantage that we
+can ignore it (and so model abnormal termination), and that we can
+have more than one continuation (and so model exception handling and
+backtracking).
 
 
 ## A. Loading two continuation-based interpreters for a functional
