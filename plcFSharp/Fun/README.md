@@ -31,11 +31,15 @@ Items F and G concern type inference of the higher-order micro-ML
 language.  Item H concerns the generic linked list example.
 
 
-## A. Loading the micro-ML evaluator, with abstract syntax only, Chapter 3
+## A. Loading the micro-ML evaluator, with abstract syntax only
+
+Load the evaluator into F# interactive:
 
 ```bash
 dotnet fsi Absyn.fs Fun.fs
 ```
+
+Run example programs: 
 
 ```fsharp
 open Absyn;;
