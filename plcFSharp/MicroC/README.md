@@ -120,7 +120,7 @@ clang -Wall machine.c -o machine
 or
 
 ```bash
-% gcc -Wall machine.c -o machine
+gcc -Wall machine.c -o machine
 ```
 
 ### On x86 platform with Linux
@@ -133,8 +133,8 @@ clang -Wall machine.c -o machine
 
 or
 
-```text
-% gcc -Wall machine.c -o machine
+```bash
+gcc -Wall machine.c -o machine
 ```
 
 #### On x86 platform with Windows
