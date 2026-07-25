@@ -1,8 +1,9 @@
 # Errata for Programming Language Concepts, 3rd Edition
 
-Please provide information on any error found in the book.
+Mistakes in the book or code is listed below.
 
+We very much appreciate information on mistakes. Please mail nh@itu.dk.
 
+## Identified Mistakes in Book and Code
 
-- TODO: Wrong files for list-C
-- TODO: Wrong usage in micro-C
+Currently empty.
