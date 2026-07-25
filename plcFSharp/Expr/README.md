@@ -10,8 +10,7 @@ statements, the proper nesting of parentheses within parentheses, and
 (in Java) of methods within classes, etc.
 
 
-## A. Generate and compile the lexer and parser for the expression
-   language:
+## A. Generate and compile the lexer and parser for the expression language
 
 ```bash
 dotnet build parse.fsproj
