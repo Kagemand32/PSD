@@ -72,7 +72,7 @@ This compiles `ex01.sml` from the `SmlEx` directory and generates the
 output file:
 
 ```bash
-ex01.out
+SmlEx/ex01.out
 ```
 
 Example:
