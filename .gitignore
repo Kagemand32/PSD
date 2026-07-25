@@ -121,4 +121,6 @@ plcFSharp/Virtual/Ex6/*.class
 plcFSharp/Virtual/Ex13/*.class
 plcFSharp/Virtual/Ex26/*.class
 plcFSharp/Virtual/Selsort/*.class
+plcFSharp/Virtual/Selsort/*.jvmbytecode
+plcFSharp/Virtual/Selsort/*.il
 plcFSharp/Virtual/StringConcatSpeed/*.class
