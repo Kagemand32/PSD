@@ -46,33 +46,49 @@ dotnet fsi Intcomp1.fs
 
 ```fsharp
 open Intcomp1;;
+```
 
+```fsharp
 eval e1 [];;
 run e1;;
+```
 
+```fsharp
 closedin e1 [];;
 closed1 e1;;
+```
 
+```fsharp
 subst e6 [("z", CstI 17)];;
 subst e7s0 [("z", CstI 100)];;
+```
 
+```fsharp
 freevars e1;;
 closed2 e1;;
 freevars e7s0;;
 closed2 e7s0;;
+```
 
+```fsharp
 tcomp e1 [];;
 teval (tcomp e1 []) [];;
 eval e1 [];;
 teval (tcomp e1 []) [] = (eval e1 []);;
+```
 
+```fsharp
 reval [RCstI 10; RCstI 17; RDup; RMul; RAdd] [];;
 rcomp (Prim("+", Prim("*", CstI 2, CstI 3), CstI 4));;
+```
 
+```fsharp
 eval e0 [];;
 rcomp e0;;
 reval (rcomp e0) [];;
+```
 
+```fsharp
 eval e1 [];;
 scomp e1 [];;
 seval (scomp e1 []) [];;
