@@ -15,7 +15,7 @@ aspects of F# than we use here.  The F# programming language belongs
 to the ML family, which includes Standard ML and OCaml, where F#
 resembles the latter most.  All of these languages are strict, mostly
 functional, and statically typed with parametric polymorphic type
-inference.  Microsofts.NET platform provides a high-performance
+inference.  Microsofts .NET platform provides a high-performance
 implementation of F# on Linux, MacOS and Windows. Relevant file is
 `Intro/Appendix.fs`.
 
