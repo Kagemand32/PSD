@@ -1,6 +1,5 @@
 # Compiling and using the Micro Virtual Machine
 
-
 ## Building the micro virtual machine
 
   The virtual machine is in directory `MicroVM`.
@@ -17,28 +16,28 @@
 
     `gcc` is `clang` by default and both work.
 
-```text
-% clang -Wall microvm.c -o microvm
+```bash
+clang -Wall microvm.c -o microvm
 ```
 
 or
 
-```text
-% gcc -Wall microvm.c -o microvm
+```bash
+gcc -Wall microvm.c -o microvm
 ```
 
 ### On x86 platform with Linux
 
 Both `gcc` and `clang` should work:
 
-```text
-% clang -Wall microvm.c -o microvm
+```bash
+clang -Wall microvm.c -o microvm
 ```
 
 or
 
-```text
-% gcc -Wall microvm.c -o microvm
+```bash
+gcc -Wall microvm.c -o microvm
 ```
 
 ### On x86 platform with Windows
@@ -57,30 +56,34 @@ Minimum choose "Visual Studio Build Tools".
 
   To compile:
 
-```text
+```bash
 clang --target=x86_64-pc-windows-msvc -Wall microvm.c -o microvm.exe
 ```
 
 ### On ARM platform with Widnows
 
-  <TODO>
+Not yet tested on ARM with Windows.
 
 ## Simple test of micro-VM
 
 The file `prog0` prints an infinite number of numbers on terminal
    starting with commandline input:
 
-```text
-% ./microvm prog0 10
+```bash
+./microvm prog0 10
+```
 
+```bash
 10 11 12 13 14 15 16 ...
 ```
 
 The file `prog1` loops 20 million times
 
-```text
-% ./microvm prog1          
+```bash
+./microvm prog1          
+```
 
+```bash
 Result value: 0 
 Used 207 cpu milli-seconds
 Number of GC: 0
@@ -95,8 +98,11 @@ Test the virtual abstract machine by running below examples
 
 1. With no command line arguments
 
-```text
-% ./microvm          
+```bash
+./microvm
+```
+
+```bash
 micro virtual machine for 64 bit architecture, running on MacOS
 Compiled with clang version 17 on May 14 2026 at 12:14:11
 Usage: microvm [-trace] [-silent] <programfile> <arg1> ...
@@ -106,8 +112,11 @@ You need to provide program to run, an *.out file.
 
 2. With `ex55.out` as command line argument
 
-```text
-% ./microvm ex55.out 
+```bash
+./microvm ex55.out 
+```
+
+```bash
 Program expects 1 argument(s), but got 0.
 Used 0 cpu milli-seconds
 Number of GC: 0
@@ -118,8 +127,11 @@ the size of the board on which to place queens.
 
 3. With command line 5
 
-```text
-% ./microvm ex55.out 5
+```bash
+./microvm ex55.out 5
+```
+
+```bash
 1 3 5 2 4 
 1 4 2 5 3 
 2 4 1 3 5 
@@ -149,8 +161,11 @@ execution, bytecode STOP.
 
 Will execute bytecode program in silence mode.
 
-```text
-% ./microvm -silent ex55.out 5
+```bash
+./microvm -silent ex55.out 5
+```
+
+```bash
 1 3 5 2 4 
 1 4 2 5 3 
 2 4 1 3 5 
@@ -170,8 +185,11 @@ Will execute bytecode program in silence mode.
 Will enable stack tracing and output stack after each bytecode has
 been executed.
 
-```text
-% ./microvm -trace ex55.out 4
+```bash
+./microvm -trace ex55.out 4
+```
+
+```bash
 [ ]{0:PUSHLAB 774}
 [ 774 ]{2:HEAPALLOC 1}
 [ 774 #49949966336 ]{4:HEAPCOPY 1}
