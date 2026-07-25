@@ -15,16 +15,16 @@ aspects of F# than we use here.  The F# programming language belongs
 to the ML family, which includes Standard ML and OCaml, where F#
 resembles the latter most.  All of these languages are strict, mostly
 functional, and statically typed with parametric polymorphic type
-inference.  Microsofts .NET platform provides a high-performance
+inference.  Microsofts.NET platform provides a high-performance
 implementation of F# on Linux, MacOS and Windows. Relevant file is
 `Intro/Appendix.fs`.
 
 ## A. Crash Course
 
-File `Appendix.fs` contains all examples from PLCSD Appendix A: F#
-Crash Course.  There is no point in loading all of it into F#
-Interactive (fsi) in one go.  Instead, start fsi in a Command Prompt
-and copy example code from Appendix.fs to fsi.
+File `Appendix.fs` contains all examples from PLC Appendix A: F# Crash
+Course.  There is no point in loading all of it into F# Interactive
+(fsi) in one go.  Instead, start fsi in a Command Prompt and copy
+example code from `Appendix.fs` to fsi.
 
 ```bash
 dotnet fsi
