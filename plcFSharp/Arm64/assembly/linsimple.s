@@ -1,12 +1,12 @@
 // linsimple.s - Arm64 assembly program calling libc printf on Linux
-// sestoft@itu.dk * 2026-01-09
+// and Windows on Arm (WOA) * sestoft@itu.dk * 2026-07-27
 
 // Assemble, link and run with
 //   clang linsimple.s -o linsimple
 //   ./linsimple
 
 // This assembly program has the same effect as the C statement
-//   printf("The result is ->%ld<-\n", 3456 + 120000);
+//   printf("The result is ->%jd<-\n", 3456 + 120000);
 
 .global main                         // Entry point of 
 .extern printf                       // C library function
@@ -28,4 +28,4 @@ main:
 
 .data                                // Data section
 mystring:                            // mystring is here:
-  .string "The result is ->%ld<-\n"
+  .string "The result is ->%jd<-\n"

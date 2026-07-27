@@ -1,7 +1,7 @@
 (* File Arm64/Arm64.fs
 
    Instructions and assembly code for Arm64 on Linux and MacOS.
-   sestoft@itu.dk * 2026-01-29, based on X86.fs (Kokholm, Sestoft)
+   sestoft@itu.dk * 2026-07-27, based on X86.fs (Kokholm, Sestoft)
 
    Overall design:
 
@@ -41,14 +41,14 @@
 
 module Arm64
 
-(* The MacOS linker, but not Linux, expects an underscore (_) before
-   external and global names.  That is, on MacOS, what is called foo
-   in C must be called _foo in Arm64 assembly code. *)
+(* The linker on MacOS, but not on Linux and Windows, expects an
+   underscore (_) before external and global names.  So on MacOS, what
+   is called foo in C must be called _foo in Arm64 assembly code.
+*)
 
-let isLinux = false
-//  System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(OSPlatform.Linux)
+let isMacOS = System.Runtime.InteropServices.RuntimeInformation.IsOSPlatform(System.Runtime.InteropServices.OSPlatform.OSX)
 
-let prefix = if isLinux then "" else "_"
+let prefix = if isMacOS then "_" else ""
 
 let printi    = prefix + "printi"
 let println   = prefix + "println"

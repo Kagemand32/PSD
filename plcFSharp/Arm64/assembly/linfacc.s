@@ -1,6 +1,7 @@
-// linfacc.s - in Arm64 assembly for Linux - shows how to call an assembly-defined
-// recursive function fac from C code, and how to call C functions from assembly.
-// sestoft@itu.dk * 2026-01-09
+// linfacc.s - in Arm64 assembly for Linux and Windows on Arm (WOA).
+// Shows how to call an assembly-defined recursive function fac from
+// C code, and how to call C functions from assembly.
+// sestoft@itu.dk * 2026-07-27
  
 // Compile, assemble, link and run with
 //   clang -c driver.c
@@ -31,7 +32,7 @@
 // 2432902008176640000 
 
 .text
-.global asmmain
+.global asm_main
 .extern checkargc
 .extern printc    
 .extern printi

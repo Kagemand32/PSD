@@ -1,5 +1,5 @@
 // macfac.s - recursive function (factorial) in 64-bit Arm64 assembly for MacOS
-// sestoft@itu.dk * 2025-11-12
+// sestoft@itu.dk * 2026-07-27
 // Assemble and run with
 //   clang -arch arm64 macfac.s -o macfac
 //   ./macfac
@@ -20,7 +20,7 @@ _main:
     mov     x0, #20                     // Argument n = 20
     bl      fac 
 
-    // Print result using printf("%ld ")
+    // Print result using printf("%jd ")
     sub     sp, sp, #16                 // Reserve stack space for printf's 2nd argument 
     str     x0, [sp]                    // Copy x0 to stack top, as printf's 2nd argument
     adrp    x0, printistr@PAGE
@@ -65,6 +65,6 @@ fac:
 
     .section __TEXT,__cstring
 printistr:
-    .asciz "%ld "
+    .asciz "%jd "
 printcstr:
     .asciz "%c"

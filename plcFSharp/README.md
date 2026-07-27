@@ -59,7 +59,7 @@ You need the following installed:
 
 - Clang and LLVM, a cross platform compiler supporting C and C++. The
   Clang compiler is a cross platform compiler and works on Linux,
-  Windows and MacOS.
+  MacOS and Windows.
 
 ### Installing Clang, Linux
 
@@ -102,22 +102,30 @@ clang version 22.1.0 (https://github.com/llvm/llvm-project 4434dabb69916856b824f
 Target: x86_64-pc-windows-msvc
 ```
 
-### Installing Clang, Windows ARM
+### Installing Clang, Windows Arm64 (WOA)
 
-There are two dependencies that must be installed:
+Install MSYS2, which is a Unix-style environment for building native
+Windows programs.  Then you can build the provided C code and Arm64
+assembly examples exactly as described for Linux in other READMEs.
 
-1. [MSVC toolchain](https://visualstudio.microsoft.com/downloads)
+Go to https://www.msys2.org/, download the installer called something
+like `msys2-arm64-yyyymmdd.exe` and run it.  This will install MSYS2
+in directory `C:\msys64`.
 
-Find **Build Tools for Visual Studio 2026**, download the installer,
-and use it to select and install these files:
+Run `C:\msys64\clangarm64.exe` which opens a Linux-style command line
+prompt.
 
-- MSVC v143 - VS 2022 C++ ARM64/ARM64EC build tools
-- MSVC v143 - VS 2022 C++ ARM64/ARM64EC Spectre-mitigated libs
-- Windows 11 SDK
+Update the msys2 package list using the `pacman` package manager in msys2:
 
-2. `clang` for Windows ARM, [llvm](https://releases.llvm.org)
+```bash
+  $ pacman -Suy
+```
 
-- `LLVM-22.1.0-woa64.exe` (or later)
+Install `clang` tools and so on:
+
+```bash
+  $ pacman -S mingw-w64-clang-aarch64-clang
+```
 
 Consult `MicroVM/README.md` to test the installation on the micro
 virtual machine, `microvm.c`.

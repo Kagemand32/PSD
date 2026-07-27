@@ -76,4 +76,12 @@ clang -arch arm64 Arm64Ex/ex11.s driver.o -o try11
 
 #### On MS Windows with Arm64
 
-Not supported.
+Note: Your Windows computer must have an `Arm64`processor.  Intel
+architectures such as `x86`, `x86_64` and `Amd64` will not work with
+these micro-C for Arm64 examples.
+
+If you have installed `msys` and `clang` as described in [Platform
+Dependencies](../../README.md), you can call `clang` on the command
+line (in the `clangarm64` prompt) exactly as shown for Linux above,
+and on the same generated assembly files (ex11.s and so on).
+

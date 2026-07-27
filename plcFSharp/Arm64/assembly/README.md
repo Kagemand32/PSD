@@ -4,7 +4,7 @@ You need the folder `Arm64/assembly/`.
 
 All examples use the Clang compiler and its built-in assembler.
 
-See [Planform Dependencies](../../README.md) for instructions to
+See [Platform Dependencies](../../README.md) for instructions to
 install Clang and LLVM.
 
 ## 1. Linux
@@ -77,17 +77,16 @@ MacOS Arm64 assembly files differ from Linux Arm64 files in these ways:
 - The page and page offset addresses are obtained by `@PAGE` and `@PAGEOFF`
 - The second argument to `_printf` must be given on the stack, not in `x1`
 
-## 3. Windows ARM
+## 3. Windows on Arm64 (WOA)
 
-Currently not supported.
+Note: Your Windows computer must have an `Arm64`processor for these
+examples to work.  Intel architectures such as `x86`, `x86_64` and
+`Amd64` will not work with these examples.
 
-<!--
-You will need Clang and LLVM for Windows on Arm64 (WOA), and your
-computer must have an Arm64 processor. 
+If you have installed `msys` and `clang` as described in [Platform
+Dependencies](../../README.md), you can call `clang` on the command
+line (in a `clangarm64` prompt) exactly as shown for Linux above, and
+on the same source files (linsimple.s and so on).
 
-Intel `x86`, `x86_64`, `Amd64`, and similar architectures will not
-work with these examples.
 
-Assembly code files for Windows have prefix `win`, as in `winsimple.s`
--->
 

@@ -1,5 +1,6 @@
 // linfib.s - recursive function Fibonacci in Arm64 assembly for Linux
-// sestoft@itu.dk * 2026-01-09
+// and Windows on Arm (WOA) * sestoft@itu.dk * 2026-07-27
+
 // Assemble and run with
 //   clang linfib.s -o linfib
 //   ./linfib
@@ -19,7 +20,7 @@ main:
     mov     x0, #35                     // Argument n to fib(n)
     bl      fib
 
-    // Print result using printf("%ld ")
+    // Print result using printf("%jd ")
     mov     x1, x0                      // Copy x0 to x1, as printf's 2nd argument
     adrp    x0, printistr
     add     x0, x0, :lo12:printistr     // 1st printf argument is format string, to x0
@@ -62,6 +63,6 @@ fib:
 
 .data
 printistr:
-    .asciz "%ld "
+    .asciz "%jd "
 printcstr:
     .asciz "%c"
