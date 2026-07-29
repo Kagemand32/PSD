@@ -17,4 +17,4 @@ let _ =
       try ignore (Arm64Comp.compileToFile (Parse.fromFile source) source target)
       with Failure msg -> printf "ERROR: %s\n" msg
    else
-      printf "Usage: microccarm <source file>\n";;
+      printf "Usage: dotnet run --project microccarm64.fsproj <source file>\n";;

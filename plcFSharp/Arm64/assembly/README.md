@@ -83,10 +83,10 @@ Note: Your Windows computer must have an `Arm64`processor for these
 examples to work.  Intel architectures such as `x86`, `x86_64` and
 `Amd64` will not work with these examples.
 
-If you have installed `msys` and `clang` as described in [Platform
+If you have installed `msys2` and `clang` as described in [Platform
 Dependencies](../../README.md), you can call `clang` on the command
-line (in a `clangarm64` prompt) exactly as shown for Linux above, and
-on the same source files (linsimple.s and so on).
+line (in a `clangarm64` prompt) exactly as shown for Linux above, 
+on exactly the same source files (linsimple.s and so on).
 
 
 

@@ -52,7 +52,7 @@ Build succeeded in 0.4s
 ```
 
 The build process automatically downloads and installs the
-**FsLexYacc** tools (if necessary), generates the following files:
+**FsLexYacc** tools (if necessary), then generates the following files:
 
 - `CLex.fs`
 - `CLex.fsi`

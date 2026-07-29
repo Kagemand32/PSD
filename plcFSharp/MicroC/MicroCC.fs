@@ -17,4 +17,4 @@ let _ =
       try ignore (Comp.compileToFile (Parse.fromFile source) target)
       with Failure msg -> printf "ERROR: %s\n" msg
    else
-      printf "Usage: microcc <source file>\n";;
+      printf "Usage: dotnet run --project microcc.fsproj <source file>\n";;

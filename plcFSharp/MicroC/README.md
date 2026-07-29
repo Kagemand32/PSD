@@ -215,7 +215,7 @@ dotnet build microcc.fsproj
 Compile a micro-C program:
 
 ```bash
-dotnet run CEx/ex11.c --project microcc.fsproj
+dotnet run --project microcc.fsproj CEx/ex11.c 
 ```
 
 Run the generated code using the Java stack machine:

@@ -1,4 +1,4 @@
-# Programming Language Constructs
+# Programming Language Concepts
 
 ## Welcome
 
@@ -65,28 +65,27 @@ Some example lecture slides are included as supporting material, see
 
 ## Bibliographic data, third edition (2026)
 TODO
-[Peter Sestoft](https://pure.itu.dk/da/persons/peter-sestoft/), [Niels
+[Peter Sestoft](https://raspi.itu.dk/~sestoft/), [Niels
       Hallenberg](https://pure.itu.dk/da/persons/niels-hallenberg/) :
       Programming Language Concepts, Third edition, [Springer
       Undergraduate Topics in Computer
-      Science](http://www.springer.com/series/7592) </a> xv + 341
-      pages.  ISBN 978-3-319-60788-7. September 2017. The [book's
-      page]( http://www.springer.com/gp/book/9783319607887) at
+      Science](http://www.springer.com/series/7592) </a>. The [book's
+      page](linklink) at
       Springer.  Front matter and back matter are freely available.
 
 Order it from
-[Amazon.com](https://www.amazon.com/Programming-Language-Concepts-Undergraduate-Computer-ebook/dp/B075BGDD4P)
+[Amazon.de](linklink)
 or
-[Amazon.co.uk](https://www.amazon.co.uk/Programming-Language-Concepts-Undergraduate-Computer/dp/331960788X/)
+[Amazon.co.uk](linklink)
 or straight from
-[Springer](http://www.springer.com/gp/book/9783319607887).
+[Springer](linklink).
 
 [Errata for the third edition](plc3rd/errata3rd.md).
 
 
 ## Bibliographic data, second edition (2017)
 
-[Peter Sestoft](https://pure.itu.dk/da/persons/peter-sestoft/) :
+[Peter Sestoft](https://raspi.itu.dk/~sestoft/) :
       Programming Language Concepts, Second edition, with a chapter by
       Niels Hallenberg, [Springer Undergraduate Topics in Computer
       Science](http://www.springer.com/series/7592) </a> xv + 341
@@ -97,13 +96,14 @@ or straight from
 Order it from
 [Amazon.com](https://www.amazon.com/Programming-Language-Concepts-Undergraduate-Computer-ebook/dp/B075BGDD4P)
 or
-[Amazon.co.uk](https://www.amazon.co.uk/Programming-Language-Concepts-Undergraduate-Computer/dp/331960788X/)
+[Amazon.de](https://www.amazon.de/Programming-Language-Concepts-Undergraduate-Computer/dp/331960788X)
 or straight from
 [Springer](http://www.springer.com/gp/book/9783319607887).
 
+
 ## Bibliographic data, first edition (2012)
 
-[Peter Sestoft](https://pure.itu.dk/da/persons/peter-sestoft/) :
+[Peter Sestoft](https://raspi.itu.dk/~sestoft/) :
     Programming Language Concepts, [Springer Undergraduate Topics in
     Computer Science](http://www.springer.com/series/7592). xiv + 278
     pages.  ISBN 978-1-4471-4155-6. July 2012. The [book's

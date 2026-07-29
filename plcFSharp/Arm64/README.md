@@ -34,7 +34,7 @@ dotnet build
 Use the command-line compiler:
 
 ```bash
-dotnet run Arm64Ex/ex11.c --project microccarm64.fsproj
+dotnet run --project microccarm64.fsproj Arm64Ex/ex11.c 
 ```
 
 This should output something like:

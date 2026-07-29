@@ -2,9 +2,9 @@
 
 Mistakes in the book or code is listed below.
 
-We very much appreciate information on mistakes. Please create an
-[Issue](https://github.com/sestoft/ProgrammingLanguageConcepts/issues)
-and report the mistake.
+We very much appreciate information on mistakes. Please send an email
+to Niels Hallenberg (nh@itu.dk) or Peter Sestoft (sestoft@itu.dk) and
+report the mistake.
 
 ## Identified Mistakes in Book and Code
 
