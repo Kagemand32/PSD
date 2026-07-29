@@ -66,7 +66,7 @@ Some example lecture slides are included as supporting material, see
 ## Bibliographic data, third edition (2026)
 TODO
 [Peter Sestoft](https://raspi.itu.dk/~sestoft/), [Niels
-      Hallenberg](https://pure.itu.dk/da/persons/niels-hallenberg/) :
+      Hallenberg](https://www.linkedin.com/in/nielshallenberg/) :
       Programming Language Concepts, Third edition, [Springer
       Undergraduate Topics in Computer
       Science](http://www.springer.com/series/7592) </a>. The [book's
