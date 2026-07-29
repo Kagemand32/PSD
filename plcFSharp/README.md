@@ -83,9 +83,9 @@ There are two dependencies that must be installed:
 1. [MSVC toolchain](https://visualstudio.microsoft.com/downloads)
 
 Find **Build Tools for Visual Studio 2026**, download the installer,
-and use it to select and install these files:
+and use it to select and install this workload:
 
-- TODO
+- Desktop development with C++
 
 2. `clang` for Windows x86_64, [llvm](https://releases.llvm.org)
 
