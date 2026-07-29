@@ -12,7 +12,6 @@
 *.blg
 *.fls
 *.fdb_latexmk
-*.out
 *~
 .vs
 .DS_Store
@@ -55,6 +54,7 @@ plcFSharp/Cont/Factorial/*.class
 
 # Do not include Java SE 25 auto generated folder.
 plcFSharp/MicroJ/JavaEx/Javac
+plcFSharp/MicroJ/JavaEx/*.out
 
 # Do not include C++ build target
 plcFSharp/MicroJ/Cpp/main
@@ -103,7 +103,7 @@ plcFSharp/ListC/CLex.fs
 plcFSharp/ListC/CLex.fsi
 plcFSharp/ListC/CPar.fs
 plcFSharp/ListC/CPar.fsi
-plcFSharp/ListC/LictcEx/*.out
+plcFSharp/ListC/ListcEx/*.out
 
 # Do not include micro-C machine
 plcFSharp/MicroC/machine
