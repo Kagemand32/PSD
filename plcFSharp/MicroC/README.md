@@ -142,6 +142,12 @@ gcc -Wall machine.c -o machine
 We recommend using `clang` as compiler. See [Platform
 Dependencies](../../README.md) on how to install across platforms.
 
+To compile the bytecode machine:
+
+```bash
+clang --target=x86_64-pc-windows-msvc -Wall machine.c -o machine.exe
+```
+
 ## Simple test of micro-VM
 
 The file `prog0` prints an infinite number of numbers on terminal
