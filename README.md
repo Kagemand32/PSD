@@ -2,10 +2,10 @@
 
 ## Welcome
 
-<img src="./plc3rd/plc-3rd-cover.jpg" align="right" width="200">
+<img src="./plc3rd/plc-3rd-cover.png" align="right" width="200">
 
 Welcome to the repository for the supporting files to the book
-Programming Language Constructs (PLC), Third Edition.
+Programming Language Concepts (PLC), Third Edition.
 
 The book covers basic concepts such as abstract and concrete syntax;
 functional, object oriented and imperative programming languages;
@@ -34,15 +34,17 @@ lecture slides and other materials are available below.
 The second edition added a synthesis chapter that presented a full
 compiler from micro-SML, a subset of the functional language Standard
 ML, to an abstract machine, and a chapter that described a simple
-compiler from micro-C to real machine code.  This third edition adds
-two new synthesis chapters that describe micro-Java, a subset of Java,
-its type checking and its compilation for an abstract machine. The
-various abstract machines have been unified into one, called
-micro-VM. We have reduced the number of programming tools and now use
-only cross-platform tools such as Java, dotnet, F#, and clang. The
-chapter on compilation of micro-C to real machine code now describes
-and uses the Arm64 architecture instead of x86, and the neater Arm64
-instruction set is used in all machine code examples.
+compiler from micro-C to real machine code.  
+
+This third edition adds two new synthesis chapters that describe
+micro-Java, a subset of Java, its type checking and its compilation
+for an abstract machine. The various abstract machines have been
+unified into one, called micro-VM. We have reduced the number of
+programming tools and now use only cross-platform tools such as Java,
+dotnet, F#, and clang. The chapter on compilation of micro-C to real
+machine code now describes and uses the Arm64 architecture instead of
+x86, and the neater Arm64 instruction set is used in all machine code
+examples.
 
 [Table of contents for the third edition.](./plc3rd/tableofcontents.pdf)
 
