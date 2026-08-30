@@ -75,11 +75,10 @@ let rec eval3 e (env : (string * int) list) : int =
         | "max" -> max i1 i2
         | "==" -> if (i1 = i2) then 1 else 0 
         | _ -> failwith "unknown primitive"
+    | If (e1, e2, e3) -> if eval3 e1 env <> 0 then eval3 e2 env else eval3 e3 env    
 (* End of Exercise*)
 
 (* End of 1.1*)
-
-
 (* 1.2 (i)*)
 type aexpr2 =
     | CstI of int
@@ -127,7 +126,7 @@ let rec simplify : aexpr2 -> aexpr2 = function
         if (simplify e1, simplify e2) = (e1, e2) 
         then Add (e1,e2) 
         else simplify (Add (simplify e1, simplify e2))
-    | Sub (e1, e2W) when e1 = e2 -> CstI 0
+    | Sub (e1, e2) when e1 = e2 -> CstI 0
     | Sub (CstI 0, e) -> simplify e
     | Sub (e, CstI 0) -> simplify e
     | Sub (e1, e2) ->
@@ -158,4 +157,15 @@ let simplifiedAlreadySimple = alreadySimple |> simplify |> fmt
 let bookExample = Mul (Add (CstI 1, CstI 0), Add (Var "x", CstI 0))
 
 let bookExampleSimplified = bookExample |> simplify |> fmt
-*)      
+*)     
+(* 1.2 (V) *)
+let rec symbolicDiff (dx, e: aexpr2) =
+    match e with
+    | CstI _ ->  CstI 0
+    | Var x when x = dx -> CstI 1
+    | Var x when x <> dx -> CstI 0
+    | Add (e1, e2) -> Add (symbolicDiff (dx, e1), symbolicDiff (dx, e2))
+    | Sub (e1, e2) ->  Sub (symbolicDiff (dx, e1), symbolicDiff (dx, e2))
+    | Mul (e1, e2) -> Add (Mul ( symbolicDiff (dx, e1), e2), Mul (symbolicDiff (dx, e2), e1))    
+    | Var(_) -> failwith "Empty variable"  
+(* End of exercise *)
