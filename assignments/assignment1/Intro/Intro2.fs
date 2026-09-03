@@ -123,13 +123,14 @@ let rec simplify : aexpr2 -> aexpr2 = function
         would have been found beforehand.
         If not, we should get away with trying to simplify further without looping
         Same goes for mult and sub *)
+
         if (simplify e1, simplify e2) = (e1, e2) 
         then Add (e1,e2) 
         else simplify (Add (simplify e1, simplify e2))
     | Sub (e1, e2) when e1 = e2 -> CstI 0
     | Sub (CstI 0, e) -> simplify e
     | Sub (e, CstI 0) -> simplify e
-    | Sub (e1, e2) ->
+    | Sub (e1, e2) -> 
         if (simplify e1, simplify e2) = (e1, e2) 
         then Sub (e1,e2) 
         else simplify (Sub (simplify e1, simplify e2))
@@ -142,7 +143,7 @@ let rec simplify : aexpr2 -> aexpr2 = function
         else simplify (Mul (simplify e1, simplify e2))
 (* End of exercise *)
 
-(*test cases :)  
+(* Test cases
 let complicated1 = Add (CstI 0, Var "x")
 let simpleStr1 = complicated1 |> simplify |> fmt 
 
@@ -157,7 +158,8 @@ let simplifiedAlreadySimple = alreadySimple |> simplify |> fmt
 let bookExample = Mul (Add (CstI 1, CstI 0), Add (Var "x", CstI 0))
 
 let bookExampleSimplified = bookExample |> simplify |> fmt
-*)     
+
+*)
 (* 1.2 (V) *)
 let rec symbolicDiff (dx, e: aexpr2) =
     match e with
