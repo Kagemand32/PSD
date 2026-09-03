@@ -1,29 +1,29 @@
 using System;
 using System.Collections.Generic;
 
-abstract class Expr
+abstract class Expr // abstact class for all expressions
 {
     public abstract int eval(Dictionary<string, int> env);
     public abstract Expr simplify();
     public override abstract string ToString();
 
-    protected static bool IsZero(Expr e)
+    protected static bool IsZero(Expr e) // helper function, literally just if is zero
     {
         return e is CstI c && c.Value == 0;
     }
 
-    protected static bool IsOne(Expr e)
+    protected static bool IsOne(Expr e) //same, just if is one
     {
         return e is CstI c && c.Value == 1;
     }
 
-    protected static bool IsSameExpr(Expr e1, Expr e2)
+    protected static bool IsSameExpr(Expr e1, Expr e2) //helper that checks if the expressions are the same
     {
         return e1.ToString() == e2.ToString();
     }
 }
 
-class CstI : Expr
+class CstI : Expr // Constant integer
 {
     private readonly int i;
 
@@ -50,7 +50,7 @@ class CstI : Expr
     }
 }
 
-class Var : Expr
+class Var : Expr // variable from a provided environment
 {
     private readonly string name;
 
@@ -75,7 +75,7 @@ class Var : Expr
     }
 }
 
-abstract class Binop : Expr
+abstract class Binop : Expr // abstract binary operator, parent to Add, Sub, Mul
 {
     protected readonly Expr e1;
     protected readonly Expr e2;
@@ -168,18 +168,20 @@ class Sub : Binop
 
 public class Ex1Expr
 {
-    public static void Main(string[] args)
+    public static void Main(string[] args) // main execution for ex 1.4
     {
-        Expr e1 = new CstI(17);
+        // three expressions from 1.4 ii
+        Expr e1 = new Sub(new Var("baf"),new CstI(17));
         Expr e2 = new Add(new CstI(3), new Var("a"));
         Expr e3 = new Add(new Mul(new Var("b"), new CstI(9)), new Var("a"));
 
-        Dictionary<string, int> env0 = new Dictionary<string, int>();
+        Dictionary<string, int> env0 = new Dictionary<string, int>(); // an environment (taken from the java example)
         env0["a"] = 3;
         env0["c"] = 78;
         env0["baf"] = 666;
         env0["b"] = 111;
 
+        // simple printouts for environment, toString of the expressions, and the evaluation of them
         Console.WriteLine("Env: " + env0.ToString());
         Console.WriteLine("Expression 1: " + e1);
         Console.WriteLine("Expression 2: " + e2);
@@ -189,6 +191,7 @@ public class Ex1Expr
         Console.WriteLine(e2 + " = " + e2.eval(env0));
         Console.WriteLine(e3 + " = " + e3.eval(env0));
 
+        // simplification in action, duh
         Expr e = new Add(new CstI(0), new Mul(new Var("x"), new CstI(1)));
         Console.WriteLine(e.simplify()); // prints x
     }
