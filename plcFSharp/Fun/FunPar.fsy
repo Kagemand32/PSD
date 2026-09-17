@@ -1,6 +1,6 @@
 %{
  (* File Fun/FunPar.fsy 
-    Parser for micro-ML, a small functional language; one-argument functions.
+    Parser for micro-ML, a small functional language; multiple-argument functions. // 4.4
     sestoft@itu.dk * 2009-10-19
   *)
 
@@ -25,8 +25,9 @@
 %nonassoc NOT           /* highest precedence  */
 
 %start Main
-%type <Absyn.expr> Main Expr AtExpr Const
-%type <Absyn.expr> AppExpr
+%type <Absyn.expr> Main Expr AtExpr AppExpr Const /* 4.4 just onelined appexpr and atexpr */
+%type <string list> ParamList                  /* 4.4: non-empty parameter list */
+%type <Absyn.expr list> ArgList                /* 4.4: non-empty argument list */
 
 %%
 
@@ -56,13 +57,23 @@ AtExpr:
     Const                               { $1                     }
   | NAME                                { Var $1                 }
   | LET NAME EQ Expr IN Expr END        { Let($2, $4, $6)        }
-  | LET NAME NAME EQ Expr IN Expr END   { Letfun($2, $3, $5, $7) }
+  | LET NAME ParamList EQ Expr IN Expr END     /* 4.4: multiple parameters */
+                                        { Letfun($2, $3, $5, $7) }
   | LPAR Expr RPAR                      { $2                     }
 ;
 
 AppExpr:
-    AtExpr AtExpr                       { Call($1, $2)           }
-  | AppExpr AtExpr                      { Call($1, $2)           }
+    NAME ArgList                        { Call(Var $1, $2)        } /* 4.4: flatten application */
+;
+
+ParamList:
+    NAME                                { [$1]                    } /* 4.4: at least one parameter */
+  | NAME ParamList                      { $1 :: $2                }
+;
+
+ArgList:
+    AtExpr                              { [$1]                    } /* 4.4: at least one argument */
+  | AtExpr ArgList                      { $1 :: $2                }
 ;
 
 Const:
