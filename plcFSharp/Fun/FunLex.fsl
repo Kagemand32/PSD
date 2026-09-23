@@ -48,6 +48,8 @@ rule Token = parse
   | '<'             { LT }
   | ">="            { GE }
   | "<="            { LE }
+  | "&&"            { AND } (* 4.5 added AND symbol*)
+  | "||"            { OR } (* 4.5 added OR symbol*)
   | '+'             { PLUS }                     
   | '-'             { MINUS }                     
   | '*'             { TIMES }                     
