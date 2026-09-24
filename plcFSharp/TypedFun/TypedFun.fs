@@ -56,36 +56,59 @@ type tyexpr =
           (* (f,       x,       xTyp, fBody,  rTyp, letBody *)
   | Call of tyexpr * tyexpr
 
-(* A runtime value is an integer or a function closure *)
+(* A runtime value is an integer, a list, or a function closure *)
 
 type value = 
   | Int of int
+  | List of value list
   | Closure of string * string * tyexpr * value env       (* (f, x, fBody, fDeclEnv) *)
 
-let rec eval (e : tyexpr) (env : value env) : int =
+let rec eval (e : tyexpr) (env : value env) : value = (* 5.7 ADDED A BUNCH OF EVAL CODE FOR LISTS*)
     match e with
-    | CstI i -> i
-    | CstB b -> if b then 1 else 0
-    | Var x  ->
-      match lookup env x with
-      | Int i -> i 
-      | _     -> failwith "eval Var"
+    | CstI i -> Int i
+    | CstB b -> Int(if b then 1 else 0)
+    | Nil _ -> List []
+    | Cons(e1, e2) ->
+      let v1 = eval e1 env
+      match eval e2 env with
+      | List vs -> List(v1 :: vs)
+      | _ -> failwith "eval Cons: second argument is not a list"
+    | Head e ->
+      match eval e env with
+      | List [] -> failwith "eval Head: empty list"
+      | List (v::_) -> v
+      | _ -> failwith "eval Head: argument is not a list"
+    | Tail e ->
+      match eval e env with
+      | List [] -> failwith "eval Tail: empty list"
+      | List (_::vs) -> List vs
+      | _ -> failwith "eval Tail: argument is not a list"
+    | Var x  -> lookup env x
     | Prim(ope, e1, e2) -> 
-      let i1 = eval e1 env
-      let i2 = eval e2 env
-      match ope with
-      | "*" -> i1 * i2
-      | "+" -> i1 + i2
-      | "-" -> i1 - i2
-      | "=" -> if i1 = i2 then 1 else 0
-      | "<" -> if i1 < i2 then 1 else 0
-      | _   -> failwith "unknown primitive"
+      let i1 =
+        match eval e1 env with
+        | Int i -> i
+        | _ -> failwith "eval Prim: non-integer operand"
+      let i2 =
+        match eval e2 env with
+        | Int i -> i
+        | _ -> failwith "eval Prim: non-integer operand"
+      Int(match ope with
+          | "*" -> i1 * i2
+          | "+" -> i1 + i2
+          | "-" -> i1 - i2
+          | "=" -> if i1 = i2 then 1 else 0
+          | "<" -> if i1 < i2 then 1 else 0
+          | _   -> failwith "unknown primitive")
     | Let(x, eRhs, letBody) -> 
-      let xVal = Int(eval eRhs env)
+      let xVal = eval eRhs env
       let bodyEnv = (x, xVal) :: env 
       eval letBody bodyEnv
     | If(e1, e2, e3) -> 
-      let b = eval e1 env
+      let b =
+        match eval e1 env with
+        | Int i -> i
+        | _ -> failwith "eval If: condition is not an integer"
       if b<>0 then eval e2 env else eval e3 env
     | Letfun(f, x, _, fBody, _, letBody) -> 
       let bodyEnv = (f, Closure(f, x, fBody, env)) :: env 
@@ -94,7 +117,7 @@ let rec eval (e : tyexpr) (env : value env) : int =
       let fClosure = lookup env f
       match fClosure with
       | Closure (f, x, fBody, fDeclEnv) ->
-        let xVal = Int(eval eArg env)
+        let xVal = eval eArg env
         let fBodyEnv = (x, xVal) :: (f, fClosure) :: fDeclEnv
         eval fBody fBodyEnv
       | _ -> failwith "eval Call: not a function"
