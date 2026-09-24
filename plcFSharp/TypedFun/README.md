@@ -22,6 +22,13 @@ typeCheck ex1;;
 typeCheck exErr1;;
 ```
 
+examples of lists
+```fsharp
+typeCheck (Cons(CstI 1, Nil TypI));;
+typeCheck (Head(Cons(CstB true, Nil TypB)));;
+typeCheck (Nil (TypL TypI));;
+```
+
 ```fsharp
 #q;;
 ```

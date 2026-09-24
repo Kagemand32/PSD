@@ -31,11 +31,12 @@ let rec lookup env x =
     | []        -> failwith (x + " not found")
     | (y, v)::r -> if x=y then v else lookup r x;;
 
-(* A type is int, bool or function *)
+(* A type is int, bool, list, or function *)
 
 type typ =
   | TypI                                (* int                         *)
   | TypB                                (* bool                        *)
+  | TypL of typ                         (* 5.7 list, element type is typ  *)
   | TypF of typ * typ                   (* (argumenttype, resulttype)  *)
 
 (* New abstract syntax with explicit types, instead of Absyn.expr: *)
@@ -43,6 +44,10 @@ type typ =
 type tyexpr = 
   | CstI of int
   | CstB of bool
+  | Nil of typ (* 5.7  added types expressions for list components*)
+  | Cons of tyexpr * tyexpr
+  | Head of tyexpr
+  | Tail of tyexpr
   | Var of string
   | Let of string * tyexpr * tyexpr
   | Prim of string * tyexpr * tyexpr
@@ -101,6 +106,22 @@ let rec typ (e : tyexpr) (env : typ env) : typ =
     match e with
     | CstI i -> TypI
     | CstB b -> TypB
+    | Nil t -> TypL t  (* 5.7 Added type checking for Nil, Cons, Head, Tail from here and down*)
+    | Cons(e1, e2) ->
+      let t1 = typ e1 env
+      let t2 = typ e2 env
+      match t2 with
+      | TypL t when t = t1 -> t2
+      | TypL _ -> failwith "Cons: element type differs from list type"
+      | _ -> failwith "Cons: second argument is not a list"
+    | Head e ->
+      match typ e env with
+      | TypL t -> t
+      | _ -> failwith "Head: argument is not a list"
+    | Tail e ->
+      match typ e env with
+      | TypL t -> TypL t
+      | _ -> failwith "Tail: argument is not a list" (* 5.7 down to here *)
     | Var x  -> lookup env x 
     | Prim(ope, e1, e2) -> 
       let t1 = typ e1 env
