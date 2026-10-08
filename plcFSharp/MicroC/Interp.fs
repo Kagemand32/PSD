@@ -158,6 +158,14 @@ and eval e locEnv gloEnv store : int * store =
     | Assign(acc, e) -> let (loc, store1) = access acc locEnv gloEnv store
                         let (res, store2) = eval e locEnv gloEnv store1
                         (res, setSto store2 loc res) 
+    | PreInc acc      -> (* 7.4: Resolve the lvalue once and return its incremented value. *)
+                        let (loc, store1) = access acc locEnv gloEnv store
+                        let res = getSto store1 loc + 1
+                        (res, setSto store1 loc res)
+    | PreDec acc      -> (* 7.4: Resolve the lvalue once and return its decremented value. *)
+                        let (loc, store1) = access acc locEnv gloEnv store
+                        let res = getSto store1 loc - 1
+                        (res, setSto store1 loc res)
     | CstI i         -> (i, store)
     | Addr acc       -> access acc locEnv gloEnv store
     | Prim1(ope, e1) ->
@@ -236,4 +244,3 @@ let run (Prog topdecs) vs =
     exec mainBody mainBodyEnv (varEnv, funEnv) store1
 
 (* Example programs are found in the files ex1.c, ex2.c, etc *)
-

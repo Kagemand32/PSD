@@ -16,6 +16,7 @@ let nl = CstI 10
 
 %token CHAR ELSE IF INT NULL PRINT PRINTLN RETURN VOID WHILE
 %token PLUS MINUS TIMES DIV MOD
+%token PLUSPLUS MINUSMINUS                 /* 7.5: Prefix increment and decrement tokens. */
 %token EQ NE GT LT GE LE
 %token NOT SEQOR SEQAND
 %token LPAR RPAR LBRACE RBRACE LBRACK RBRACK SEMI COMMA ASSIGN AMP
@@ -30,6 +31,7 @@ let nl = CstI 10
 %left PLUS MINUS
 %left TIMES DIV MOD 
 %nonassoc NOT AMP 
+%nonassoc PLUSPLUS MINUSMINUS /* 7.5: Prefix operators bind more tightly than binary operators. */
 %nonassoc LBRACK          /* highest precedence  */
 
 %start Main
@@ -116,6 +118,8 @@ Expr:
 ExprNotAccess:
     AtExprNotAccess                     { $1                   }
   | Access ASSIGN Expr                  { Assign($1, $3)       }
+  | PLUSPLUS Access                     { PreInc $2            } /* 7.5: Build preincrement syntax. */
+  | MINUSMINUS Access                   { PreDec $2            } /* 7.5: Build predecrement syntax. */
   | NAME LPAR Exprs RPAR                { Call($1, $3)         }  
   | NOT Expr                            { Prim1("!", $2)       }
   | PRINT Expr                          { Prim1("printi", $2)  }
