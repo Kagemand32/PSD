@@ -1,0 +1,44 @@
+100 1 # LDARGS = 1 
+80 1 6 #call 1 L1 
+101 # STOP
+L1:
+62 1 # INCSP 1
+60 # GETBP
+0 1 # CSTI 1
+10 # ADD
+0 0 # CSTI 0
+41 # STI (store indirect)
+62 -1 # INCSP -1
+70 44 # GOTO L3
+L2:
+60 # GETBP
+0 1 # CSTI 1 
+10 # ADD
+40 # LDI (load indirect)
+90 # PRINTI
+62 -1 # INCSP -1
+60 # GETBP
+0 1 # CSTI 1
+10 # ADD
+60 # GETBP
+0 1 # CSTI 1
+10 # ADD
+40 # LDI
+0 1 # CSTI 1 
+10 # ADD 
+41 # STI
+62 -1 # INCSP with m=-1 
+62 0 # INCSP with m= 0
+L3:
+60 #GETBP
+0 1  # CSTI 1 
+10 # ADD
+40 # LDI 
+60 # GETBP
+0 0 # CSTI 0
+10 # ADD
+40 # LDI  
+21 # LT (Less Than)
+72 19 # IFNZRO L2
+62 -1 # INCSP -1 
+86 0 # RET 0

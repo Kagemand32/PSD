@@ -1,0 +1,46 @@
+# Part 1 (ex8.c vs progr1)
+
+
+100 0 # no args
+80 0 6 #call 0 L1 
+101 # STOP  
+62 1 # INCSP 1
+60 # GETBP 
+0 0 # int 0
+10 # add
+0 20000000  # int 20000000
+41 # STI (store indirect)
+62 -1 # INCSP -1
+70 36 # GOTO 36
+60 # GETBP
+0 0 # int 0
+10 # add 
+60 # GETBP 
+0 0 # int 0
+10 # add
+40 # LDI
+0 1 # int 1
+11 # sub
+41 # STI (store indirect) 
+62 -1 # INCSP -1
+62 0 # INCSP 0
+60 # GETBP
+0 0 # int 0
+10 # ADD 
+40 #LDI
+72 19 # IFNZRO 19
+62 -1  # INCSP -1 
+86 -1 # return 
+
+# faster version
+
+0 20000000 # int 20000000
+70 7 # goto 7
+0 1 # int 1
+11 # sub
+30 #dup
+72 4 # IFNZRO 4
+101 # STOP
+
+# the faster version is way faster because it does not bother with maintaining a stack frame. 
+# DUP does all the work needed in this case.
