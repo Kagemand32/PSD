@@ -166,6 +166,11 @@ and eval e locEnv gloEnv store : int * store =
                         let (loc, store1) = access acc locEnv gloEnv store
                         let res = getSto store1 loc - 1
                         (res, setSto store1 loc res)
+    | ExprIf(e, e1, e2) -> (* 8.5 *)
+                        let (v, store1) = eval e locEnv gloEnv store
+                        if v<>0 then eval e1 locEnv gloEnv store1
+                        else eval e2 locEnv gloEnv store1
+
     | CstI i         -> (i, store)
     | Addr acc       -> access acc locEnv gloEnv store
     | Prim1(ope, e1) ->

@@ -1,0 +1,102 @@
+	{
+		// Method begins at RVA 0x20cc
+		// Header size: 12
+		// Code size: 78 (0x4e)
+		.maxstack 4
+		.locals init (
+			[0] int32, # i
+			[1] int32, # least
+			[2] int32, # tmp
+			[3] int32, # j
+			[4] bool, # arr[j] < arr[least]
+			[5] bool, # j < N
+			[6] bool # i < N
+		)
+
+		IL_0000: nop
+		IL_0001: ldc.i4.0 # push int 0 to stack
+		IL_0002: stloc.0 # i = 0
+		IL_0003: br.s IL_0041 # jump to IL_0041
+		// loop start (head: IL_0041)
+			IL_0005: nop
+			IL_0006: ldloc.0 # load local var 0 to the stack
+			IL_0007: stloc.1 # pop that value into var 1
+			IL_0008: ldloc.0 # put var 0 on the stack again
+			IL_0009: ldc.i4.1 # push int 1 to the stack
+			IL_000a: add # i += 1
+			IL_000b: stloc.3 # pop from stack to var 3. (j = i+1)
+			IL_000c: br.s IL_0022 # Jump to IL_0022
+			// loop start (head: IL_0022)
+				IL_000e: ldarg.0 # push arg 0 into the stack (reference to array)
+				IL_000f: ldloc.3 # push var 3 to the stack (j)
+				IL_0010: ldelem.i4 # push jth element of the array to stack
+				IL_0011: ldarg.0 # push arg 0 into the stack (reference to array)
+				IL_0012: ldloc.1 # push least to the stack
+				IL_0013: ldelem.i4 # push arr[least] to stack
+				IL_0014: clt # less than (arr[j] < arr[least])
+				IL_0016: stloc.s 4 # store at local var 4
+				IL_0018: ldloc.s 4 # keep on stack
+				IL_001a: brfalse.s IL_001e # (do not set least = j if this is false) 
+
+				IL_001c: ldloc.3 # push j to stack
+				IL_001d: stloc.1 # set least = j
+
+				IL_001e: ldloc.3 # push j to stack
+				IL_001f: ldc.i4.1 # push 1 to stack
+				IL_0020: add # j+1
+				IL_0021: stloc.3 # j+=1
+
+				IL_0022: ldloc.3 # push j to the stack
+				IL_0023: ldarg.0 # push the array to the stack
+				IL_0024: ldlen # get the length
+				IL_0025: conv.i4 # convert to int
+				IL_0026: clt # less than (j < N)
+				IL_0028: stloc.s 5 # store this value at local var 5
+				IL_002a: ldloc.s 5 # keep it on stack
+				IL_002c: brtrue.s IL_000e # do inner loop again if true. Else don't
+
+                # this correspnds to:
+                for (int j = i+1; j < arr.Length; j++)
+                    if (arr[j] < arr[least])
+                        least = j;
+			// end loop 
+            
+
+			IL_002e: ldarg.0 # push array to stack
+			IL_002f: ldloc.0 # push i to stack
+			IL_0030: ldelem.i4 # push arr[i] to stack
+			IL_0031: stloc.2 # store arr[i] in local var 2 (tmp)
+			IL_0032: ldarg.0 # push array to stack
+			IL_0033: ldloc.0 # push i to stack
+			IL_0034: ldarg.0 # push array to stack
+			IL_0035: ldloc.1 # push least to stack
+			IL_0036: ldelem.i4 # push arr[least] to stack
+			IL_0037: stelem.i4 # arr[i] = arr[least]
+			IL_0038: ldarg.0 # push array to stack
+			IL_0039: ldloc.1 # push least to stack
+			IL_003a: ldloc.2 # push tmp to stack
+			IL_003b: stelem.i4 # arr[least] = tmp
+			IL_003c: nop
+			IL_003d: ldloc.0 # push i to stack
+			IL_003e: ldc.i4.1 # push 1 to stack
+			IL_003f: add # i + 1
+			IL_0040: stloc.0 # i += 1
+            # This correspnds to: 
+            int tmp = arr[i]; arr[i] = arr[least]; arr[least] = tmp;
+
+			IL_0041: ldloc.0 # load local var 0 to the stack
+			IL_0042: ldarg.0 # push arg 0 into the stack (reference to array)
+			IL_0043: ldlen # push the length of the array to the stack
+			IL_0044: conv.i4 # convert to  i32
+			IL_0045: clt # less than. Check if i < N
+			IL_0047: stloc.s 6 # store this value at local var 6 
+			IL_0049: ldloc.s 6 # keep it on the stack
+			IL_004b: brtrue.s IL_0005 # jump to IL_0005  (continue loop if i < N)
+            
+
+		// end loop
+
+		IL_004d: ret
+	} // end of method Selsort::SelectionSort
+
+

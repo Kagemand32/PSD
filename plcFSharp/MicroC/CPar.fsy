@@ -21,8 +21,11 @@ let nl = CstI 10
 %token NOT SEQOR SEQAND
 %token LPAR RPAR LBRACE RBRACE LBRACK RBRACK SEMI COMMA ASSIGN AMP
 %token EOF
+%token EXPRIF COLON       /* 8.5 */
+%token SWITCH CASE        /* 8.6 */
 
 %right ASSIGN             /* lowest precedence */
+%right EXPRIF COLON       /* 8.5 */
 %nonassoc PRINT
 %left SEQOR
 %left SEQAND
@@ -102,7 +105,9 @@ StmtM:  /* No unbalanced if-else */
   | Block                               { $1                   }
   | IF LPAR Expr RPAR StmtM ELSE StmtM  { If($3, $5, $7)       }
   | WHILE LPAR Expr RPAR StmtM          { While($3, $5)        }
+  | SWITCH LPAR Expr RPAR LBRACE CaseSeq RBRACE       {}
 ;
+
 
 StmtU:
     IF LPAR Expr RPAR StmtM ELSE StmtU  { If($3, $5, $7)       }
@@ -137,6 +142,7 @@ ExprNotAccess:
   | Expr LE    Expr                     { Prim2("<=", $1, $3)  }
   | Expr SEQAND Expr                    { Andalso($1, $3)      }
   | Expr SEQOR  Expr                    { Orelse($1, $3)       }
+  | Expr EXPRIF Expr COLON Expr         { ExprIf($1, $3, $5)   } /* 8.5 */
 ;
 
 AtExprNotAccess:
