@@ -131,6 +131,20 @@ let rec cStmt stmt (varEnv : varEnv) (funEnv : funEnv) : instr list =
       let labtest  = newLabel()
       [GOTO labtest; Label labbegin] @ cStmt body varEnv funEnv
       @ [Label labtest] @ cExpr e varEnv funEnv @ [IFNZRO labbegin]
+    | Switch(e, cases) -> (* 8.6 Compile switch dispatch and isolated case bodies *)
+      match cases with (* 8.6 Handle empty switches without allocating labels *)
+      | [] -> cExpr e varEnv funEnv @ [INCSP -1] (* 8.6 Evaluate and discard the selector when there are no cases *)
+      | _ ->
+        let endLabel = newLabel() (* 8.6 share one exit label across all cases. *)
+        let precedingCases = List.take (List.length cases - 1) cases (* 8.6 reserve the final case for direct dispatch *)
+        let caseLabels = List.map (fun _ -> newLabel()) precedingCases (* 8.6 Label each earlier case body *)
+        let (lastValue, lastBody) = List.last cases (* 8.6 Read the final case for terminal dispatch *)
+        cExpr e varEnv funEnv (* 8.6 Evaluate the selector exactly once *)
+        @ (List.zip precedingCases caseLabels |> List.collect (fun ((value, _), label) -> [DUP; CSTI value; EQ; IFNZRO label])) (* 8.6 Dispatch to earlier matching cases *)
+        @ [CSTI lastValue; EQ; IFZERO endLabel] (* 8.6 compare the final case while consuming the selector *)
+        @ cStmt lastBody varEnv funEnv @ [GOTO endLabel] (* 8.6 Prevent fall-through after the final case *)
+        @ (List.zip precedingCases caseLabels |> List.collect (fun ((_, body), label) -> [Label label; INCSP -1] @ cStmt body varEnv funEnv @ [GOTO endLabel])) (* 8.6 Remove the selector and exit each earlier case *)
+        @ [Label endLabel] (* 8.6 Mark the single switch exit *)
     | Expr e -> 
       cExpr e varEnv funEnv @ [INCSP -1]  (* Remove result of expression from stack, as this is a statement *)
     | Block stmts -> 

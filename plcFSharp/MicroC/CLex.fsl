@@ -25,6 +25,8 @@ let keyword s =
     | "print"   -> PRINT
     | "println" -> PRINTLN
     | "return"  -> RETURN
+    | "switch"  -> SWITCH (* 8.6 recognize switch as a keyword. *)
+    | "case"    -> CASE (* 8.6 recognize case as a keyword. *)
     | "true"    -> CSTBOOL 1
     | "void"    -> VOID 
     | "while"   -> WHILE         
@@ -75,8 +77,7 @@ rule Token = parse
   | '['             { LBRACK }
   | ']'             { RBRACK }
   | ';'             { SEMI }
-  | ':'             { COLON } (* 8.5 *)
-  | '?'             { EXPRIF } (* 8.5 *)
+  | ':'             { COLON } (* 8.6 recognize case-label separators. *)
   | ','             { COMMA }
   | "//"            { EndLineComment lexbuf; Token lexbuf }
   | "/*"            { Comment lexbuf; Token lexbuf }

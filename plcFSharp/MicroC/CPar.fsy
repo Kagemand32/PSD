@@ -105,9 +105,18 @@ StmtM:  /* No unbalanced if-else */
   | Block                               { $1                   }
   | IF LPAR Expr RPAR StmtM ELSE StmtM  { If($3, $5, $7)       }
   | WHILE LPAR Expr RPAR StmtM          { While($3, $5)        }
-  | SWITCH LPAR Expr RPAR LBRACE CaseSeq RBRACE       {}
+  | SWITCH LPAR Expr RPAR LBRACE CaseSeq RBRACE       { Switch($3, $6) } /* 8.6 Parse switch statements with case blocks */
 ;
 
+CaseSeq: /* 8.6 Parse zero or more switch cases */
+    /* empty */                         { [] } /* 8.6 Permit switches with no cases */
+  | Case CaseSeq                        { $1 :: $2 } /* 8.6 Preserve the source order of cases */
+;
+
+Case: /* 8.6 Require an integer constant and a statement block per case */
+    CASE CSTINT COLON Block             { ($2, $4) } /* 8.6 Parse a nonnegative integer case */
+  | CASE MINUS CSTINT COLON Block       { (-$3, $5) } /* 8.6 Parse a negative integer case */
+;
 
 StmtU:
     IF LPAR Expr RPAR StmtM ELSE StmtU  { If($3, $5, $7)       }
