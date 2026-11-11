@@ -1,0 +1,12 @@
+11.1.(i)
+lenc [2; 5; 7] id evaluates to 3. Using the printing continuation prints:
+The answer is '3'
+
+11.1.(ii)
+lenc xs (fun v -> 2*v) returns twice the length of xs, because the continuation
+transforms the length instead of simply returning it.
+
+11.1.(iii)
+leni xs 0 returns the length using a tail-recursive accumulator. For any xs and
+continuation k, lenc xs k is equivalent to k (leni xs 0): the CPS version passes
+the length to its continuation, while leni returns the length directly.

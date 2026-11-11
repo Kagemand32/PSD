@@ -1,0 +1,11 @@
+11.2.(i)
+revc xs id returns the reversed list. Each recursive step adds the current head
+to the end of the reversed tail before passing the result to the continuation.
+
+11.2.(ii)
+revc xs (fun v -> v @ v) returns the reversed list concatenated with itself.
+The continuation is applied to the completed reversed list.
+
+11.2.(iii)
+revi xs [] returns the reversed list using a tail-recursive accumulator. It
+builds the result by prepending each input element to the accumulator.
