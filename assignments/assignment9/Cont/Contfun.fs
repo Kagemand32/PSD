@@ -271,6 +271,9 @@ let rec lenc (xs : 'a list) (k : int -> 'b) : 'b =
 (* 11.1 Identity continuation & printing continuation *)
 let id = fun v -> v
 let cpsLengthId = lenc [2; 5; 7] id
+let cpsLengthIddouble = lenc [2; 5; 7] (fun v -> 2 * v)
+
+(*lenc xs (fun v -> 2*v) returns twice the length of xs, because the continuation k executes last. *)
 
 let cpsLengthPrinted = lenc [2; 5; 7] (printf "The answer is '%d'\n")
 
@@ -282,6 +285,9 @@ let rec leni (xs : int list) (acc : int) : int =
 
 let iterativeLength = leni [2; 5; 7] 0
 
+(*leni xs 0 returns the length using a tail-recursive accumulator. For any xs and
+continuation k, lenc xs k is equivalent to k (leni xs 0): the CPS version passes
+the length to its continuation, while leni returns the length directly. *)
 
 
 (* 11.2 CPS list reversal: pass the reversed list to the continuation. *)
@@ -290,9 +296,11 @@ let rec revc (xs : 'a list) (k : 'a list -> 'b) : 'b =
     | [] -> k []
     | x::xr -> revc xr (fun reversed -> k (reversed @ [x]))
 
-let cpsReversed = revc [1; 2; 3] id // returns
+let cpsReversed = revc [1; 2; 3] id // returns [3; 2; 1]
 
-let cpsReversedTwice = revc [1; 2; 3] (fun v -> v @ v) // returns doubly
+let cpsReversedTwice = revc [1; 2; 3] (fun v -> v @ v) // returns doubly: [3; 2; 1; 3; 2; 1]
+
+(* 11.2 Tail-recursive list reversal with an accumulating parameter. *)
 
 (* 11.2 Tail-recursive reversing*)
 let rec revi (xs : 'a list) (acc : 'a list) : 'a list =
@@ -305,10 +313,23 @@ let iterativelyReversed = revi [1; 2; 3] [] // example
 
 
 
-(* 11.3 CPS product: pass the product of the list to its continuation. *)
-let rec prodc (xs : int list) (k : int -> int) : int =
+(* 11.3 / 11.4 CPS product with zero-short-circuiting *)
+let rec prodc (xs : int list) (k : int -> 'b) : 'b =
     match xs with
     | [] -> k 1
+    | 0::_ -> k 0
     | x::xr -> prodc xr (fun product -> k (x * product))
 
-let cpsProduct = prodc [2; 5; 7] id // example
+(* examples *)
+let cpsProductZeroId = prodc [2; 0; 7] id
+
+let cpsProductZeroPrinted = prodc [2; 0; 7] (printf "The answer is '%d'\n")
+
+(* 11.4 Tail-recursive product with an accumulator and early zero return. *)
+let rec prodi (xs : int list) (acc : int) : int =
+    match xs with
+    | [] -> acc
+    | 0::_ -> 0
+    | x::xr -> prodi xr (acc * x)
+
+let iterativeProductZero = prodi [2; 0; 7] 1
