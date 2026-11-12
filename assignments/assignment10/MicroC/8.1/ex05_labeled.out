@@ -1,0 +1,60 @@
+100 1 # LDARGS, 1 argument
+80 1 L1 # call 1 L1 
+101 # STOP
+Label L1:
+62 1 # INCSP 1
+60 # GETBP
+0 1 # int 1
+10 # ADD
+60 # GETBP
+0 0 # int 0
+10 # ADD
+40 # LDI 
+41 # STI
+62 -1 # INSCP -1
+62 1 # INSCP 1
+60 # GETBP
+0 0 # int 0
+10 # ADD
+40 # LDI
+60 # GETBP
+0 2 # int 2
+10 # ADD
+80 2 58 # call 2 L2
+62 -1 # INSCP -1
+60 # GETBP
+0 2 # int 2
+10 # ADD
+40 # LDI
+90 # PRINTI
+62 -1 # INSCP -1
+62 -1 # INSCP -1
+60 #GETBP
+0 1 # int 1 
+10 # ADD
+40 # LDI 
+90 # PRINTI
+62 -1 # INSCP -1 
+62 -1 # INSCP -1 
+86 0 # return 0
+Label L2:
+60 # GETBP
+0 1 # int 1
+10 # ADD
+40 # LDI
+60 # GETBP
+0 0 # int 0
+10 # ADD
+40 # LDI 
+60 # GETBP
+0 0 # int 0
+10 # ADD
+40 # LDI
+12 # mul
+41 #STI 
+62 -1 # INSCP -1 
+62 0 # INSCP 0 
+86 1 # return 1
+
+
+# You can identify nested scope by looking at the INCSP instructions. These are what makes space for the variables in the blocks
